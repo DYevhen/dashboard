@@ -1,0 +1,4 @@
+com/exadel/it/tests/PublishPageValidationIT.class
+com/exadel/it/tests/CreatePageIT.class
+com/exadel/it/tests/HtmlUnitClient.class
+com/exadel/it/tests/GetPageIT.class

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>News dashboard - All</comment>
+<entry key="allowIndexDefinitions">false</entry>
+<entry key="created">2021-08-25T11:04:31.658Z</entry>
+<entry key="groupId">com.exadel</entry>
+<entry key="name">dashboard.all</entry>
+<entry key="description">All content package for News dashboard</entry>
+<entry key="artifactId">dashboard.all</entry>
+<entry key="version">1.0.0-SNAPSHOT</entry>
+<entry key="packageType">container</entry>
+<entry key="requiresRoot">false</entry>
+<entry key="group">com.exadel</entry>
+</properties>

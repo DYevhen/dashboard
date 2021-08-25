@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>News dashboard - UI content</comment>
+<entry key="allowIndexDefinitions">false</entry>
+<entry key="acHandling">merge</entry>
+<entry key="dependencies-locations">com.exadel:dashboard.ui.apps:1.0.0-SNAPSHOT=maven:com.exadel:dashboard.ui.apps:1.0.0-SNAPSHOT:zip</entry>
+<entry key="created">2021-08-25T11:04:31.061Z</entry>
+<entry key="groupId">com.exadel</entry>
+<entry key="description">UI content package for News dashboard</entry>
+<entry key="version">1.0.0-SNAPSHOT</entry>
+<entry key="packageType">content</entry>
+<entry key="requiresRoot">false</entry>
+<entry key="dependencies">com.exadel:dashboard.ui.apps:1.0.0-SNAPSHOT</entry>
+<entry key="cloudManagerTarget">none</entry>
+<entry key="name">dashboard.ui.content</entry>
+<entry key="artifactId">dashboard.ui.content</entry>
+<entry key="group">com.exadel</entry>
+</properties>

@@ -1,0 +1,5 @@
+/home/ydobrenchuk/IdeaProjects/dashboard/core/src/test/java/com/exadel/core/listeners/SimpleResourceListenerTest.java
+/home/ydobrenchuk/IdeaProjects/dashboard/core/src/test/java/com/exadel/core/filters/LoggingFilterTest.java
+/home/ydobrenchuk/IdeaProjects/dashboard/core/src/test/java/com/exadel/core/schedulers/SimpleScheduledTaskTest.java
+/home/ydobrenchuk/IdeaProjects/dashboard/core/src/test/java/com/exadel/core/servlets/SimpleServletTest.java
+/home/ydobrenchuk/IdeaProjects/dashboard/core/src/test/java/com/exadel/core/models/HelloWorldModelTest.java

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="dashboard.ui.apps" />
+        <module name="dashboard.core" />
+        <module name="dashboard.ui.content" />
+        <module name="dashboard.it.tests" />
+        <module name="dashboard.all" />
+        <module name="dashboard.ui.tests" />
+        <module name="dashboard.ui.apps.structure" />
+        <module name="dashboard.ui.config" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/conf/dashboard" mode="merge"/>
+    <filter root="/content/dashboard" mode="merge"/>
+    <filter root="/content/dam/dashboard/asset.jpg" mode="merge"/>
+    <filter root="/content/experience-fragments/dashboard" mode="merge"/>
+</workspaceFilter>

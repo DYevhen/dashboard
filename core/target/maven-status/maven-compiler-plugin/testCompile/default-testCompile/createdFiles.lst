@@ -1,0 +1,5 @@
+com/exadel/core/servlets/SimpleServletTest.class
+com/exadel/core/filters/LoggingFilterTest.class
+com/exadel/core/listeners/SimpleResourceListenerTest.class
+com/exadel/core/schedulers/SimpleScheduledTaskTest.class
+com/exadel/core/models/HelloWorldModelTest.class
