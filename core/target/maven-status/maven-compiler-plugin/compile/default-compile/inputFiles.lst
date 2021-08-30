@@ -4,7 +4,9 @@
 /home/ydobrenchuk/IdeaProjects/dashboard/core/src/main/java/com/exadel/core/filters/package-info.java
 /home/ydobrenchuk/IdeaProjects/dashboard/core/src/main/java/com/exadel/core/utility/Columns.java
 /home/ydobrenchuk/IdeaProjects/dashboard/core/src/main/java/com/exadel/core/models/HelloWorldModel.java
+/home/ydobrenchuk/IdeaProjects/dashboard/core/src/main/java/com/exadel/core/services/RssImporter.java
 /home/ydobrenchuk/IdeaProjects/dashboard/core/src/main/java/com/exadel/core/models/Card.java
+/home/ydobrenchuk/IdeaProjects/dashboard/core/src/main/java/com/exadel/core/services/impl/RssImporterImpl.java
 /home/ydobrenchuk/IdeaProjects/dashboard/core/src/main/java/com/exadel/core/models/package-info.java
 /home/ydobrenchuk/IdeaProjects/dashboard/core/src/main/java/com/exadel/core/filters/LoggingFilter.java
 /home/ydobrenchuk/IdeaProjects/dashboard/core/src/main/java/com/exadel/core/schedulers/package-info.java
