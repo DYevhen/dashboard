@@ -13,7 +13,7 @@ import java.util.Date;
 @ToString
 public class ManualCard {
 
-    final protected static String RESOURCE_TYPE="dashboard/components/content/manualcard";
+    final protected static String RESOURCE_TYPE="dashboard/components/card";
 
     private String topic;
 
