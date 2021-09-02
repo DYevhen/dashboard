@@ -28,7 +28,7 @@
     <description>Core bundle for News dashboard</description>
     <build>
         <plugins>
-            <plugin>
+            <!--<plugin>
                 <groupId>org.apache.sling</groupId>
                 <artifactId>sling-maven-plugin</artifactId>
             </plugin>
@@ -77,17 +77,18 @@ Import-Package: javax.annotation;version=0.0.0,*
                         <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
                     </archive>
                 </configuration>
-            </plugin>
+            </plugin>-->
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
-                <version> 5.1.2</version>
+                <version>5.1.2</version>
                 <extensions>true</extensions>
                 <executions>
                     <execution>
                         <id>scr-metadata</id>
                         <goals>
                             <goal>manifest</goal>
+                            <goal>bundle</goal>
                         </goals>
                         <configuration>
                             <supportIncrementalBuild>true</supportIncrementalBuild>
@@ -98,7 +99,6 @@ Import-Package: javax.annotation;version=0.0.0,*
                     <exportScr>true</exportScr>
                     <instructions>
                         <Import-Package>
-                            !org.jetbrains.annotations;version=0.0.0,
                             javax.inject;version=0.0.0,
                             javax.annotation;version=0.0.0,
                             *
@@ -106,15 +106,15 @@ Import-Package: javax.annotation;version=0.0.0,*
                         <Sling-Model-Packages>
                             com.exadel.core.models
                         </Sling-Model-Packages>
-                        <Embed-Dependency>*;scope=compile|runtime</Embed-Dependency>
+                        <Embed-Dependency>rssreader;scope=compile|runtime</Embed-Dependency>
                         <_dsannotations>*</_dsannotations>
                         <_metatypeannotations>*</_metatypeannotations>
-                        <!--<_plugin>
-                            &lt;!&ndash; Enable registration of Sling Models classes via bnd plugin &ndash;&gt;
+                        <_plugin>
+                            <!-- Enable registration of Sling Models classes via bnd plugin -->
                             org.apache.sling.bnd.models.ModelsScannerPlugin,
-                            &lt;!&ndash; Allow the processing of SCR annotations via a bnd plugin &ndash;&gt;
+                            <!-- Allow the processing of SCR annotations via a bnd plugin -->
                             org.apache.felix.scrplugin.bnd.SCRDescriptorBndPlugin;destdir=${project.build.outputDirectory}
-                        </_plugin>-->
+                        </_plugin>
                     </instructions>
                 </configuration>
                 <dependencies>
@@ -199,6 +199,16 @@ Import-Package: javax.annotation;version=0.0.0,*
             <artifactId>slf4j-api</artifactId>
         </dependency>
         <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.21</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>1.7.25</version>
+        </dependency>
+        <dependency>
             <groupId>javax.jcr</groupId>
             <artifactId>jcr</artifactId>
         </dependency>
@@ -278,10 +288,22 @@ Import-Package: javax.annotation;version=0.0.0,*
             <version>2.16.0</version>
             <scope>compile</scope>
         </dependency>
-        <dependency>
+        <!--<dependency>
             <groupId>com.apptastic</groupId>
             <artifactId>rssreader</artifactId>
-            <version>2.5.0</version>
+            <version>1.0.4</version>
+        </dependency>-->
+        <dependency>
+            <groupId>com.rometools</groupId>
+            <artifactId>rome</artifactId>
+            <version>1.16.0</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.20</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 </project>
