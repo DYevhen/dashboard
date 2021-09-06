@@ -5,7 +5,7 @@
 <entry key="allowIndexDefinitions">false</entry>
 <entry key="acHandling">merge</entry>
 <entry key="dependencies-locations">com.exadel:dashboard.ui.apps:1.0.0-SNAPSHOT=maven:com.exadel:dashboard.ui.apps:1.0.0-SNAPSHOT:zip</entry>
-<entry key="created">2021-09-02T17:31:54.223Z</entry>
+<entry key="created">2021-09-03T12:53:43.684Z</entry>
 <entry key="groupId">com.exadel</entry>
 <entry key="description">UI content package for News dashboard</entry>
 <entry key="version">1.0.0-SNAPSHOT</entry>

@@ -1,0 +1,17 @@
+<div data-sly-use.manualcard="${'com.exadel.core.models.ManualCard'}"></div>
+<!DOCTYPE html>
+<html>
+<style>
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 2fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 1em;
+}
+</style>
+<body>
+<div class="wrapper">
+    <div data-sly-resource="${@ path=par, resourceType='wcm/foundation/components/parsys'}" data-sly-unwrap></div>
+</div>
+</body>
+</html>

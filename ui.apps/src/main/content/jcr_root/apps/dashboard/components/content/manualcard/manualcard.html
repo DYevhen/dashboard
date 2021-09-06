@@ -1,0 +1,7 @@
+<!DOCTYPE html>
+<html>
+<div data-sly-use.manualcard="${'com.exadel.core.models.ManualCard'}"></div>
+<div><h1>${manualcard.topic}</h1></div>
+<div>${manualcard.article @ context='html'}</div>
+<div><a href=${manualcard.link}>${manualcard.link}</a></div>
+</html>

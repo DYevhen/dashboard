@@ -1,4 +1,10 @@
 -------------------------------------------------------------------------------
 Test set: com.exadel.core.servlets.SimpleServletTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.731 s - in com.exadel.core.servlets.SimpleServletTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 1.21 s <<< FAILURE! - in com.exadel.core.servlets.SimpleServletTest
+doGet{AemContext}  Time elapsed: 1.196 s  <<< ERROR!
+org.junit.jupiter.api.extension.ParameterResolutionException: Failed to resolve parameter [io.wcm.testing.mock.aem.junit5.AemContext arg0] in method [void com.exadel.core.servlets.SimpleServletTest.doGet(io.wcm.testing.mock.aem.junit5.AemContext) throws javax.servlet.ServletException,java.io.IOException]: Could not create io.wcm.testing.mock.aem.junit5.ResourceResolverMockAemContext instance.
+Caused by: java.lang.IllegalStateException: Could not create io.wcm.testing.mock.aem.junit5.ResourceResolverMockAemContext instance.
+Caused by: java.lang.RuntimeException: Unable to invoke method 'bindAdapterFactory' for class org.apache.sling.testing.mock.sling.MockAdapterManagerImpl
+Caused by: java.lang.NoSuchMethodError: 'void org.apache.sling.adapter.internal.AdapterFactoryDescriptor.<init>(org.osgi.service.component.ComponentContext, org.osgi.framework.ServiceReference, java.lang.String[])'
+

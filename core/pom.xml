@@ -28,56 +28,56 @@
     <description>Core bundle for News dashboard</description>
     <build>
         <plugins>
-            <!--<plugin>
+            <plugin>
                 <groupId>org.apache.sling</groupId>
                 <artifactId>sling-maven-plugin</artifactId>
             </plugin>
-            <plugin>
-                <groupId>biz.aQute.bnd</groupId>
-                <artifactId>bnd-maven-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>bnd-process</id>
-                        <goals>
-                            <goal>bnd-process</goal>
-                        </goals>
-                        <configuration>
-                            <bnd><![CDATA[
+            <!--<plugin>
+               <groupId>biz.aQute.bnd</groupId>
+               <artifactId>bnd-maven-plugin</artifactId>
+               <executions>
+                   <execution>
+                       <id>bnd-process</id>
+                       <goals>
+                           <goal>bnd-process</goal>
+                       </goals>
+                       <configuration>
+                           <bnd><![CDATA[
 Import-Package: javax.annotation;version=0.0.0,*
-                                ]]>
-                            </bnd>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>biz.aQute.bnd</groupId>
-                <artifactId>bnd-baseline-maven-plugin</artifactId>
-                <configuration>
-                    <failOnMissing>false</failOnMissing>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>baseline</id>
-                        <goals>
-                            <goal>baseline</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <configuration>
-                    <archive>
-                        <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
-                    </archive>
-                </configuration>
-            </plugin>-->
+                               ]]>
+                           </bnd>
+                       </configuration>
+                   </execution>
+               </executions>
+           </plugin>
+           <plugin>
+               <groupId>biz.aQute.bnd</groupId>
+               <artifactId>bnd-baseline-maven-plugin</artifactId>
+               <configuration>
+                   <failOnMissing>false</failOnMissing>
+               </configuration>
+               <executions>
+                   <execution>
+                       <id>baseline</id>
+                       <goals>
+                           <goal>baseline</goal>
+                       </goals>
+                   </execution>
+               </executions>
+           </plugin>
+           <plugin>
+               <groupId>org.apache.maven.plugins</groupId>
+               <artifactId>maven-surefire-plugin</artifactId>
+           </plugin>
+           <plugin>
+               <groupId>org.apache.maven.plugins</groupId>
+               <artifactId>maven-jar-plugin</artifactId>
+               <configuration>
+                   <archive>
+                       <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+                   </archive>
+               </configuration>
+           </plugin>-->
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
@@ -106,13 +106,9 @@ Import-Package: javax.annotation;version=0.0.0,*
                         <Sling-Model-Packages>
                             com.exadel.core.models
                         </Sling-Model-Packages>
-                        <!--<Embed-Dependency>
-                            rome, rome-utils, jdom2
-                        </Embed-Dependency>-->
                         <Embed-Dependency>
-                            *;scope=compile|runtime
+                            rome,rome-utils,jdom2;scope=compile|runtime
                         </Embed-Dependency>
-                        <Embed-Transitive>true</Embed-Transitive>
                         <_dsannotations>*</_dsannotations>
                         <_metatypeannotations>*</_metatypeannotations>
                         <_plugin>
@@ -281,7 +277,7 @@ Import-Package: javax.annotation;version=0.0.0,*
         <dependency>
             <groupId>org.apache.sling</groupId>
             <artifactId>org.apache.sling.models.impl</artifactId>
-            <version>1.4.4</version>
+            <version>1.4.16</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -318,13 +314,6 @@ Import-Package: javax.annotation;version=0.0.0,*
             <artifactId>jdom2</artifactId>
             <version>2.0.6</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/jaxen/jaxen -->
-        <dependency>
-            <groupId>jaxen</groupId>
-            <artifactId>jaxen</artifactId>
-            <version>1.2.0</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/com.mailjet/mailjet-client -->
         <!--<dependency>
             <groupId>com.mailjet</groupId>
             <artifactId>mailjet-client</artifactId>
