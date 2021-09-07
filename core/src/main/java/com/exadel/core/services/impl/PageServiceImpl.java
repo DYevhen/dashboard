@@ -18,7 +18,9 @@ import javax.jcr.Node;
 import javax.jcr.PathNotFoundException;
 import javax.jcr.RepositoryException;
 import javax.jcr.Session;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 @Slf4j
@@ -28,24 +30,26 @@ public class PageServiceImpl implements PageService {
     @Reference
     private ResourceResolverFactory resolverFactory;
 
-    private String user = "";
+    private final String USER = "dashboardserviceuser";
     private PageManager pageManager;
     private Session session;
     private final String PAGE_TAMPLATE = "/apps/dashboard/components/content/article";
-    private final String PAGE_PATH = "/content/dashboard/us/en/news";
+    private final String PAGE_PATH = "/content/dashboard/news";
 
     @Override
     public Page createCard(ManualCard manualCard) {
         ResourceResolver resourceResolver = null;
         Page page=null;
         ResourceResolver resolver = null;
+        Map<String, Object> paramMap = new HashMap<>();
+        paramMap.put(ResourceResolverFactory.SUBSERVICE, USER);
         try {
-            resolver = resolverFactory.getServiceResourceResolver(null);
+            resolver = resolverFactory.getServiceResourceResolver(paramMap);
             session = resolver.adaptTo(Session.class);
             pageManager = resolver.adaptTo(PageManager.class);
-            page = pageManager.create(PAGE_PATH, manualCard.getTopic(), PAGE_TAMPLATE, "Dynamic Card");
+            page = pageManager.create(PAGE_PATH, "news", PAGE_TAMPLATE, "Dynamic Card");
             if (page != null) {
-                user = resolver.getUserID();
+//                user = resolver.getUserID();
 
                 Node newNode = page.adaptTo(Node.class);
                 Node cont = newNode.getNode("jcr:content");

@@ -25,7 +25,7 @@ public class NewsImportScheduler implements Runnable{
     public static @interface Config {
 
         @AttributeDefinition(name = "Cron-job expression")
-        String scheduler_expression() default "0 0/1 * 1/1 * ? *";
+        String scheduler_expression() default "0 0/10 * 1/1 * ? *";
 
         @AttributeDefinition(name = "Concurrent task",
                 description = "Whether or not to schedule this task concurrently")
