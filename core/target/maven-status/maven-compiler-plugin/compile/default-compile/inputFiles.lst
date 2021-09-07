@@ -14,6 +14,7 @@
 /home/ydobrenchuk/IdeaProjects/dashboard/core/src/main/java/com/exadel/core/filters/LoggingFilter.java
 /home/ydobrenchuk/IdeaProjects/dashboard/core/src/main/java/com/exadel/core/schedulers/package-info.java
 /home/ydobrenchuk/IdeaProjects/dashboard/core/src/main/java/com/exadel/core/servlets/SimpleServlet.java
+/home/ydobrenchuk/IdeaProjects/dashboard/core/src/main/java/com/exadel/core/schedulers/NewsImportScheduler.java
 /home/ydobrenchuk/IdeaProjects/dashboard/core/src/main/java/com/exadel/core/servlets/package-info.java
 /home/ydobrenchuk/IdeaProjects/dashboard/core/src/main/java/com/exadel/core/models/Grid.java
 /home/ydobrenchuk/IdeaProjects/dashboard/core/src/main/java/com/exadel/core/listeners/package-info.java

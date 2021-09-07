@@ -1,9 +1,11 @@
 org/apache/sling/scripting/sightly/apps/dashboard/components/xfpage/customfooterlibs__002e__html.class
+org/apache/sling/scripting/sightly/apps/dashboard/components/content/article/article__002e__html.class
 org/apache/sling/scripting/sightly/apps/dashboard/components/xfpage/customheaderlibs__002e__html.class
 org/apache/sling/scripting/sightly/apps/dashboard/components/helloworld/helloworld__002e__html.class
 org/apache/sling/scripting/sightly/apps/dashboard/components/content/button/button__002e__html.class
 org/apache/sling/scripting/sightly/apps/dashboard/components/content/dynamiccard/dinamiccard__002e__html.class
 org/apache/sling/scripting/sightly/apps/dashboard/components/page/page__002e__html.class
+org/apache/sling/scripting/sightly/apps/dashboard/components/content/article/body__002e__html.class
 org/apache/sling/scripting/sightly/apps/dashboard/components/page/body__002e__html.class
 org/apache/sling/scripting/sightly/apps/dashboard/components/xfpage/content__002e__html.class
 org/apache/sling/scripting/sightly/apps/dashboard/components/page/customheaderlibs__002e__html.class
