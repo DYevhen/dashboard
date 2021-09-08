@@ -33,7 +33,7 @@ public class PageServiceImpl implements PageService {
     private final String USER = "dashboardserviceuser";
     private PageManager pageManager;
     private Session session;
-    private final String PAGE_TAMPLATE = "/apps/dashboard/components/content/article";
+    private final String PAGE_TAMPLATE = "/conf/dashboard/settings/wcm/templates/article";
     private final String PAGE_PATH = "/content/dashboard/news";
 
     @Override
@@ -47,7 +47,7 @@ public class PageServiceImpl implements PageService {
             resolver = resolverFactory.getServiceResourceResolver(paramMap);
             session = resolver.adaptTo(Session.class);
             pageManager = resolver.adaptTo(PageManager.class);
-            page = pageManager.create(PAGE_PATH, "news", PAGE_TAMPLATE, "Dynamic Card");
+            page = pageManager.create(PAGE_PATH, "news_page", PAGE_TAMPLATE, "News");
             if (page != null) {
 //                user = resolver.getUserID();
 
