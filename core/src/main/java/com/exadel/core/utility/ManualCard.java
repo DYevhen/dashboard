@@ -23,4 +23,6 @@ public class ManualCard {
 
     private Date pubDate;
 
+    private String image;
+
 }

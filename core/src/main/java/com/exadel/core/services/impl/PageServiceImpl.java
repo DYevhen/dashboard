@@ -33,14 +33,14 @@ public class PageServiceImpl implements PageService {
     private final String USER = "dashboardserviceuser";
     private PageManager pageManager;
     private Session session;
-    private final String PAGE_TAMPLATE = "/conf/dashboard/settings/wcm/templates/article";
+    private final String PAGE_TAMPLATE = "/conf/dashboard/settings/wcm/templates/article_2";
     private final String PAGE_PATH = "/content/dashboard/news";
 
     @Override
     public Page createCard(ManualCard manualCard) {
         ResourceResolver resourceResolver = null;
-        Page page=null;
-        ResourceResolver resolver = null;
+        Page page = null;
+        ResourceResolver resolver;
         Map<String, Object> paramMap = new HashMap<>();
         paramMap.put(ResourceResolverFactory.SUBSERVICE, USER);
         try {
@@ -49,26 +49,24 @@ public class PageServiceImpl implements PageService {
             pageManager = resolver.adaptTo(PageManager.class);
             page = pageManager.create(PAGE_PATH, "news_page", PAGE_TAMPLATE, "News");
             if (page != null) {
-//                user = resolver.getUserID();
-
                 Node newNode = page.adaptTo(Node.class);
+                assert newNode != null;
                 Node cont = newNode.getNode("jcr:content");
                 if (cont != null) {
-                    Node rootNode = session.getRootNode();
-                    String path = rootNode.getPath();
-                    Node parNode = JcrUtils.getNodeIfExists(cont, PAGE_PATH);
-                    Node imageNode = JcrUtils.getOrCreateByPath(parNode.getPath() + "/image", JcrConstants.NT_UNSTRUCTURED, session);
-                    Node textNode = JcrUtils.getNodeIfExists(parNode, "text");
-                    imageNode.setProperty("sling:resourceType", "foundation/components/image");
-                    imageNode.setProperty("fileReference", "/content/dam/we-retail-screens/we-retail-instore-logo.png");
-                    textNode.setProperty("text", "<p>This page is created using page manager</p>");
+                    Node description = cont.getNode("root/container/text");
+                    Node image = cont.getNode("root/container/myimage");
+                    Node topic = cont.getNode("root/container/text_1716190574");
+                    image.setProperty("link", manualCard.getImage());
+                    image.setProperty("sling:resourceType", "dashboard/components/content/myImage");
+                    topic.setProperty("text", String.format("<h2>%s</h2>", manualCard.getTopic()));
+                    topic.setProperty("textIsRich", "true");
+                    description.setProperty("text", manualCard.getArticle());
                     session.save();
                 }
             }
         } catch (WCMException | LoginException | RepositoryException e) {
-            log.error("Cannot create card", e);
+            log.error("Cannot create page", e);
         }
-
         return page;
     }
 

@@ -4,7 +4,7 @@
 <comment>News dashboard - UI config</comment>
 <entry key="cloudManagerTarget">none</entry>
 <entry key="allowIndexDefinitions">false</entry>
-<entry key="created">2021-09-07T17:34:37.049Z</entry>
+<entry key="created">2021-09-09T14:36:43.554Z</entry>
 <entry key="groupId">com.exadel</entry>
 <entry key="name">dashboard.ui.config</entry>
 <entry key="description">UI config package for News dashboard</entry>
