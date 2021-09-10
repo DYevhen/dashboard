@@ -4,9 +4,7 @@ import com.exadel.core.utility.ManualCard;
 import com.exadel.core.services.PageService;
 import com.exadel.core.services.RssImporter;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang.time.DateUtils;
 import org.apache.sling.commons.scheduler.Scheduler;
-import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
@@ -32,12 +30,6 @@ public class NewsImportScheduler implements Runnable {
         @AttributeDefinition(name = "Concurrent task",
                 description = "Whether or not to schedule this task concurrently")
         boolean scheduler_concurrent() default false;
-
-/*
-        @AttributeDefinition(name = "Date of last scheduler execution")
-        Date lastExecution() default
-*/
-
     }
 
     @Reference
