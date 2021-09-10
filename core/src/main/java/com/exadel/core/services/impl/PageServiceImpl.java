@@ -3,6 +3,7 @@ package com.exadel.core.services.impl;
 import com.day.cq.wcm.api.Page;
 import com.day.cq.wcm.api.PageManager;
 import com.day.cq.wcm.api.WCMException;
+import com.exadel.core.exceptions.DuplicateNewsException;
 import com.exadel.core.services.PageService;
 import com.exadel.core.utility.ManualCard;
 import lombok.extern.slf4j.Slf4j;
@@ -18,6 +19,7 @@ import javax.jcr.Node;
 import javax.jcr.PathNotFoundException;
 import javax.jcr.RepositoryException;
 import javax.jcr.Session;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -37,13 +39,16 @@ public class PageServiceImpl implements PageService {
     private final String PAGE_PATH = "/content/dashboard/news";
 
     @Override
-    public Page createCard(ManualCard manualCard) {
+    public Page createCard(ManualCard manualCard, Date lastExecution) {
         ResourceResolver resourceResolver = null;
         Page page = null;
         ResourceResolver resolver;
         Map<String, Object> paramMap = new HashMap<>();
         paramMap.put(ResourceResolverFactory.SUBSERVICE, USER);
         try {
+            if (manualCard.getPubDate().before(lastExecution)) {
+                throw new DuplicateNewsException();
+            }
             resolver = resolverFactory.getServiceResourceResolver(paramMap);
             session = resolver.adaptTo(Session.class);
             pageManager = resolver.adaptTo(PageManager.class);
@@ -64,14 +69,14 @@ public class PageServiceImpl implements PageService {
                     session.save();
                 }
             }
-        } catch (WCMException | LoginException | RepositoryException e) {
+        } catch (WCMException | LoginException | RepositoryException | DuplicateNewsException e) {
             log.error("Cannot create page", e);
         }
         return page;
     }
 
     @Override
-    public List<Page> createCards(List<ManualCard> cards) {
-        return cards.stream().map(this::createCard).collect(Collectors.toList());
+    public List<Page> createCards(List<ManualCard> cards, Date lastExecution) {
+        return cards.stream().map(x->this.createCard(x,lastExecution)).collect(Collectors.toList());
     }
 }
