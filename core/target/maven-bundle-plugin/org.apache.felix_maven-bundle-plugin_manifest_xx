@@ -1,0 +1,10 @@
+Embed-Dependency=rome,rome-utils,jdom2;scope=compile|runtime
+Import-Package=javax.inject;version=0.0.0,
+                            javax.annotation;version=0.0.0,
+                            *;resolution:=optional
+Sling-Model-Packages=com.exadel.core.models
+_dsannotations=*
+_metatypeannotations=*
+_plugin=org.apache.sling.bnd.models.ModelsScannerPlugin,
+                            
+                            org.apache.felix.scrplugin.bnd.SCRDescriptorBndPlugin;destdir=/home/ydobrenchuk/IdeaProjects/dashboard/core/target/classes

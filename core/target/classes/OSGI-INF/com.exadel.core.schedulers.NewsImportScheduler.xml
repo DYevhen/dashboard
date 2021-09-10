@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.3.0" name="com.exadel.core.schedulers.NewsImportScheduler" activate="activate">
+  <property name="scheduler.expression" type="String" value="0 0/1 * 1/1 * ? *"/>
+  <property name="scheduler.concurrent" type="Boolean" value="false"/>
+  <service>
+    <provide interface="java.lang.Runnable"/>
+  </service>
+  <reference name="pageService" interface="com.exadel.core.services.PageService" field="pageService"/>
+  <reference name="rssImporter" interface="com.exadel.core.services.RssImporter" field="rssImporter"/>
+  <reference name="scheduler" interface="org.apache.sling.commons.scheduler.Scheduler" field="scheduler"/>
+  <implementation class="com.exadel.core.schedulers.NewsImportScheduler"/>
+</scr:component>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metatype:MetaData xmlns:metatype="http://www.osgi.org/xmlns/metatype/v1.2.0" localization="OSGI-INF/l10n/com.exadel.core.schedulers.NewsImportScheduler$Config">
+  <OCD id="com.exadel.core.schedulers.NewsImportScheduler$Config" name="News scheduler" description="Simple news scheduler">
+    <AD id="scheduler.expression" type="String" name="Cron-job expression" default="0\ 0/1\ *\ 1/1\ *\ ?\ *"/>
+    <AD id="scheduler.concurrent" type="Boolean" name="Concurrent task" description="Whether or not to schedule this task concurrently" default="false"/>
+  </OCD>
+  <Designate pid="com.exadel.core.schedulers.NewsImportScheduler">
+    <Object ocdref="com.exadel.core.schedulers.NewsImportScheduler$Config"/>
+  </Designate>
+</metatype:MetaData>

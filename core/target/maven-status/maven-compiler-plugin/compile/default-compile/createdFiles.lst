@@ -1,5 +1,6 @@
 com/exadel/core/services/RssImporter.class
 com/exadel/core/utility/ManualCard.class
+com/exadel/core/exceptions/DuplicateNewsException.class
 com/exadel/core/models/HelloWorldModel.class
 com/exadel/core/servlets/package-info.class
 com/exadel/core/filters/package-info.class

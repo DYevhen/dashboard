@@ -7,8 +7,6 @@ import com.exadel.core.exceptions.DuplicateNewsException;
 import com.exadel.core.services.PageService;
 import com.exadel.core.utility.ManualCard;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.jackrabbit.JcrConstants;
-import org.apache.jackrabbit.commons.JcrUtils;
 import org.apache.sling.api.resource.LoginException;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.resource.ResourceResolverFactory;
@@ -16,7 +14,6 @@ import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 
 import javax.jcr.Node;
-import javax.jcr.PathNotFoundException;
 import javax.jcr.RepositoryException;
 import javax.jcr.Session;
 import java.util.Date;
