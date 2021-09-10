@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Article</title>
+    <style type="text/css">
+.column {
+  float: left;
+  width: 50%;
+  padding-left: 2;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+	</style>
+</head>
+<body>
+<div class="row">
+    <div class="column"><sly data-sly-resource="${'child' @ resourceType='dashboard/components/content/image'}"/></div>
+    <div class="column"><sly data-sly-resource="${'child_2' @ resourceType='dashboard/components/content/text'}"/></div>
+</div>
+<div><sly data-sly-resource="${'child_3' @ resourceType='dashboard/components/content/button'}"/></div>
+</body>
+</html>

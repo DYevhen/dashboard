@@ -15,7 +15,7 @@
  |  limitations under the License.
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.exadel</groupId>
@@ -28,56 +28,56 @@
     <description>Core bundle for News dashboard</description>
     <build>
         <plugins>
-            <!--<plugin>
+            <plugin>
                 <groupId>org.apache.sling</groupId>
                 <artifactId>sling-maven-plugin</artifactId>
             </plugin>
-            <plugin>
-                <groupId>biz.aQute.bnd</groupId>
-                <artifactId>bnd-maven-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>bnd-process</id>
-                        <goals>
-                            <goal>bnd-process</goal>
-                        </goals>
-                        <configuration>
-                            <bnd><![CDATA[
+            <!--<plugin>
+               <groupId>biz.aQute.bnd</groupId>
+               <artifactId>bnd-maven-plugin</artifactId>
+               <executions>
+                   <execution>
+                       <id>bnd-process</id>
+                       <goals>
+                           <goal>bnd-process</goal>
+                       </goals>
+                       <configuration>
+                           <bnd><![CDATA[
 Import-Package: javax.annotation;version=0.0.0,*
-                                ]]>
-                            </bnd>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>biz.aQute.bnd</groupId>
-                <artifactId>bnd-baseline-maven-plugin</artifactId>
-                <configuration>
-                    <failOnMissing>false</failOnMissing>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>baseline</id>
-                        <goals>
-                            <goal>baseline</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <configuration>
-                    <archive>
-                        <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
-                    </archive>
-                </configuration>
-            </plugin>-->
+                               ]]>
+                           </bnd>
+                       </configuration>
+                   </execution>
+               </executions>
+           </plugin>
+           <plugin>
+               <groupId>biz.aQute.bnd</groupId>
+               <artifactId>bnd-baseline-maven-plugin</artifactId>
+               <configuration>
+                   <failOnMissing>false</failOnMissing>
+               </configuration>
+               <executions>
+                   <execution>
+                       <id>baseline</id>
+                       <goals>
+                           <goal>baseline</goal>
+                       </goals>
+                   </execution>
+               </executions>
+           </plugin>
+           <plugin>
+               <groupId>org.apache.maven.plugins</groupId>
+               <artifactId>maven-surefire-plugin</artifactId>
+           </plugin>
+           <plugin>
+               <groupId>org.apache.maven.plugins</groupId>
+               <artifactId>maven-jar-plugin</artifactId>
+               <configuration>
+                   <archive>
+                       <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+                   </archive>
+               </configuration>
+           </plugin>-->
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
@@ -101,12 +101,14 @@ Import-Package: javax.annotation;version=0.0.0,*
                         <Import-Package>
                             javax.inject;version=0.0.0,
                             javax.annotation;version=0.0.0,
-                            *
+                            *;resolution:=optional
                         </Import-Package>
                         <Sling-Model-Packages>
                             com.exadel.core.models
                         </Sling-Model-Packages>
-                        <Embed-Dependency>rssreader;scope=compile|runtime</Embed-Dependency>
+                        <Embed-Dependency>
+                            rome,rome-utils,jdom2;scope=compile|runtime
+                        </Embed-Dependency>
                         <_dsannotations>*</_dsannotations>
                         <_metatypeannotations>*</_metatypeannotations>
                         <_plugin>
@@ -197,17 +199,13 @@ Import-Package: javax.annotation;version=0.0.0,*
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
             <version>1.7.21</version>
         </dependency>
-        <dependency>
+        <!--<dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
             <version>1.7.25</version>
-        </dependency>
+        </dependency>-->
         <dependency>
             <groupId>javax.jcr</groupId>
             <artifactId>jcr</artifactId>
@@ -279,7 +277,7 @@ Import-Package: javax.annotation;version=0.0.0,*
         <dependency>
             <groupId>org.apache.sling</groupId>
             <artifactId>org.apache.sling.models.impl</artifactId>
-            <version>1.4.4</version>
+            <version>1.4.16</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -298,6 +296,7 @@ Import-Package: javax.annotation;version=0.0.0,*
             <artifactId>rome</artifactId>
             <version>1.16.0</version>
         </dependency>
+
         <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -305,5 +304,44 @@ Import-Package: javax.annotation;version=0.0.0,*
             <version>1.18.20</version>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>com.rometools</groupId>
+            <artifactId>rome-utils</artifactId>
+            <version>1.16.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jdom</groupId>
+            <artifactId>jdom2</artifactId>
+            <version>2.0.6</version>
+        </dependency>
+        <!--<dependency>
+            <groupId>com.mailjet</groupId>
+            <artifactId>mailjet-client</artifactId>
+            <version>5.2.0</version>
+        </dependency>
+        &lt;!&ndash; https://mvnrepository.com/artifact/com.turbomanage.basic-http-client/http-client-java &ndash;&gt;
+        <dependency>
+            <groupId>com.turbomanage.basic-http-client</groupId>
+            <artifactId>http-client-java</artifactId>
+            <version>0.89</version>
+        </dependency>
+        &lt;!&ndash; https://mvnrepository.com/artifact/org.apache.solr/solr-solrj &ndash;&gt;
+        <dependency>
+            <groupId>org.apache.solr</groupId>
+            <artifactId>solr-solrj</artifactId>
+            <version>8.9.0</version>
+        </dependency>
+        &lt;!&ndash; https://mvnrepository.com/artifact/org.apache.zookeeper/zookeeper &ndash;&gt;
+        <dependency>
+            <groupId>org.apache.zookeeper</groupId>
+            <artifactId>zookeeper</artifactId>
+            <version>3.7.0</version>
+        </dependency>
+        &lt;!&ndash; https://mvnrepository.com/artifact/com.google.code.gson/gson &ndash;&gt;
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.8.8</version>
+        </dependency>-->
     </dependencies>
 </project>

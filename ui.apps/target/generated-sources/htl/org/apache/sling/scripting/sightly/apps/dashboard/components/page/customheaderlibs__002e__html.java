@@ -35,13 +35,12 @@ public final class customheaderlibs__002e__html extends RenderUnit {
 // Main Template Body -----------------------------------------------------------------------------
 
 Object _global_clientlib = null;
-out.write("\n");
 _global_clientlib = renderContext.call("use", "/libs/granite/sightly/templates/clientlib.html", obj());
-out.write("\n    ");
+out.write("\n\t");
 {
     Object var_templatevar0 = renderContext.getObjectModel().resolveProperty(_global_clientlib, "css");
     {
-        String var_templateoptions1_field$_categories = "dashboard.base";
+        String var_templateoptions1_field$_categories = "dashboard.page";
         {
             java.util.Map var_templateoptions1 = obj().with("categories", var_templateoptions1_field$_categories);
             callUnit(out, renderContext, var_templatevar0, var_templateoptions1);
@@ -49,11 +48,6 @@ out.write("\n    ");
     }
 }
 out.write("\n\n\n");
-{
-    Object var_resourcecontent2 = renderContext.call("includeResource", "contexthub", obj().with("resourceType", "granite/contexthub/components/contexthub"));
-    out.write(renderContext.getObjectModel().toString(var_resourcecontent2));
-}
-out.write("\n");
 
 
 // End Of Main Template Body ----------------------------------------------------------------------
