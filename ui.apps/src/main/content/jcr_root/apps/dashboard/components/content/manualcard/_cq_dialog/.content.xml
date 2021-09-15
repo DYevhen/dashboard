@@ -13,8 +13,9 @@
                 <items jcr:primaryType="nt:unstructured">
                     <topic
                         jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        sling:resourceType="cq/gui/components/authoring/dialog/richtext"
                         fieldLabel="Topic"
+                        useFixedInlineToolbar="{Boolean}true"
                         name="./topic"/>
                     <article
                         jcr:primaryType="nt:unstructured"

@@ -37,22 +37,18 @@ public class PageServiceImpl implements PageService {
 
     @Override
     public Page createCard(ManualCard manualCard, Date lastExecution) {
-        ResourceResolver resourceResolver = null;
         Page page = null;
-        ResourceResolver resolver;
         Map<String, Object> paramMap = new HashMap<>();
         paramMap.put(ResourceResolverFactory.SUBSERVICE, USER);
-        try {
+        try (ResourceResolver resolver = resolverFactory.getServiceResourceResolver(paramMap)){
             if (manualCard.getPubDate().before(lastExecution)) {
                 throw new DuplicateNewsException();
             }
-            resolver = resolverFactory.getServiceResourceResolver(paramMap);
             session = resolver.adaptTo(Session.class);
             pageManager = resolver.adaptTo(PageManager.class);
             page = pageManager.create(PAGE_PATH, "news_page", PAGE_TAMPLATE, "News");
             if (page != null) {
                 Node newNode = page.adaptTo(Node.class);
-                assert newNode != null;
                 Node cont = newNode.getNode("jcr:content");
                 if (cont != null) {
                     Node description = cont.getNode("root/container/text");
@@ -63,6 +59,8 @@ public class PageServiceImpl implements PageService {
                     topic.setProperty("text", String.format("<h2>%s</h2>", manualCard.getTopic()));
                     topic.setProperty("textIsRich", "true");
                     description.setProperty("text", manualCard.getArticle());
+                    cont.setProperty("isPosted", false);
+                    cont.setProperty("Name", page.getName());
                     session.save();
                 }
             }

@@ -1,8 +1,21 @@
 <!DOCTYPE html>
 <html>
+<style>
+    a.button {
+  background-color: #04AA6D;
+  border: none;
+  color: black;
+  font-weight: 600;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+</style>
 <div data-sly-use.manualcard="${'com.exadel.core.models.ManualCard'}"></div>
-<div><h1>${manualcard.topic}</h1></div>
+<div>${manualcard.topic @ context='html'}</div>
 <div>${manualcard.article @ context='html'}</div>
-<div><a href=${manualcard.link}>${manualcard.link}</a></div>
+<div><a href=${manualcard.link} class="button">Read</a></div>
 </html>
 
