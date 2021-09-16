@@ -3,7 +3,7 @@
 <properties>
 <comment>News dashboard - All</comment>
 <entry key="allowIndexDefinitions">false</entry>
-<entry key="created">2021-09-14T15:22:00.380Z</entry>
+<entry key="created">2021-09-16T14:43:07.249Z</entry>
 <entry key="groupId">com.exadel</entry>
 <entry key="name">dashboard.all</entry>
 <entry key="description">All content package for News dashboard</entry>

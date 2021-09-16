@@ -1,4 +1,3 @@
-<div data-sly-use.manualcard="${'com.exadel.core.models.ManualCard'}"></div>
 <!DOCTYPE html>
 <html>
 <style>
@@ -8,10 +7,56 @@
   grid-column-gap: 10px;
   grid-row-gap: 1em;
 }
+    a.button {
+  background-color: #04AA6D;
+  border: none;
+  color: black;
+  font-weight: 600;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+
 </style>
 <body>
-<div class="wrapper">
-    <div data-sly-resource="${@ path=par, resourceType='wcm/foundation/components/parsys'}" data-sly-unwrap></div>
+<div class="wrapper" data-sly-use.landing="${'com.exadel.core.models.Landing'}"
+     data-sly-use.manualcard="${'com.exadel.core.models.ManualCard'}"
+     >
+    <div class ="cardsList" data-sly-list.card="${landing.getCards}">
+        <b>${card.topic @ context='html'}</b>
+        <i>${card.article @ context='html'}</i>
+        <br>
+        <a href=${card.link} class="button">Read</a>
+    </div>
+    <!--    <div data-sly-resource="${@ path=par, resourceType='wcm/foundation/components/parsys'}" data-sly-unwrap></div>-->
 </div>
+<form action="landing.html?pageNum=1" method="GET">
+    <button>pageNum</button>
+</form>
 </body>
+<script>
+    const container = document.querySelector('.wrapper');
+    function loadNews(numNews = 10){
+        let i=0;
+        while(i < numImages){
+            fetch('https://dog.ceo/api/breeds/image/random')
+                .then(response=>response.json())
+                .then(data=>{
+                    const img =  document.createElement('img');
+                    img.src = `${data.message}`
+                    container.appendChild(img)
+                    })
+            i++;
+        }
+    }
+    window.addEventListener('scroll',()=>{
+        if(window.scrollY + window.innerHeight >= document.documentElement.scrollHeight){
+            loadNews();
+        }
+    })
+
+</script>
 </html>

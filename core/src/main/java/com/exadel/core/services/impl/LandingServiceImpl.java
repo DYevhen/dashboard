@@ -3,6 +3,7 @@ package com.exadel.core.services.impl;
 import com.day.cq.search.QueryBuilder;
 import com.day.cq.wcm.api.Page;
 import com.day.cq.wcm.api.PageManager;
+import com.exadel.core.models.ManualCard;
 import com.exadel.core.services.LandingService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.sling.api.resource.LoginException;
@@ -15,8 +16,11 @@ import javax.jcr.Node;
 import javax.jcr.NodeIterator;
 import javax.jcr.RepositoryException;
 import javax.jcr.Session;
+import javax.jcr.query.Query;
 import javax.jcr.query.QueryResult;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Slf4j
@@ -71,5 +75,35 @@ public class LandingServiceImpl implements LandingService {
         news.setProperty("textIsRich", "true");
         news.setProperty("link",link);
         content.setProperty("isPosted", true);
+    }
+
+    @Override
+    public List<ManualCard> getNews(int pageNum, int itemsPerPage) {
+        if (itemsPerPage == 0) {
+            itemsPerPage = 10;
+        }
+        List<ManualCard> news = new ArrayList<>();
+        final String query = "SELECT * FROM [nt:unstructured] AS node WHERE ISDESCENDANTNODE ([/content/dashboard/news])" +
+                "AND node.[sling:resourceType]='dashboard/components/container' AND [jcr:path] LIKE '%root/%'";
+        QueryResult queryResult;
+        Map<String, Object> paramMap = new HashMap<>();
+        paramMap.put(ResourceResolverFactory.SUBSERVICE, USER);
+        try (ResourceResolver resolver = resolverFactory.getServiceResourceResolver(paramMap)) {
+            session = resolver.adaptTo(Session.class);
+            pageManager = resolver.adaptTo(PageManager.class);
+            Query q = session.getWorkspace().getQueryManager().createQuery(query,"JCR-SQL2");
+            q.setLimit(itemsPerPage);
+            q.setOffset(pageNum);
+            queryResult = q.execute();
+            NodeIterator iterator = queryResult.getNodes();
+            while (iterator.hasNext()) {
+                Node content = iterator.nextNode();
+                ManualCard card = resolver.getResource(content.getPath()).adaptTo(ManualCard.class);
+                news.add(card);
+            }
+        }catch (LoginException | RepositoryException e){
+            log.error("Cannot get news", e);
+        }
+        return news;
     }
 }

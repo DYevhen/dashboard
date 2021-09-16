@@ -41,7 +41,7 @@ public class LandingScheduler implements Runnable{
     public void run() {
         log.info("===============================================================" +
                 "LANDING SCHEDULER START=================================================");
-        landingService.fillLanding();
+//        landingService.fillLanding();
         log.info("===============================================================" +
                 "LANDING SCHEDULER END====================================================");
     }

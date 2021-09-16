@@ -9,6 +9,7 @@ com/exadel/core/filters/package-info.class
 com/exadel/core/models/package-info.class
 com/exadel/core/schedulers/NewsImportScheduler$Config.class
 com/exadel/core/models/ColumnControl.class
+com/exadel/core/models/Landing.class
 com/exadel/core/servlets/SimpleServlet.class
 com/exadel/core/utility/Columns.class
 com/exadel/core/models/Grid.class
