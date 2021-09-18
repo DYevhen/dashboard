@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Bnd-LastModified: 1631803370778
+Bnd-LastModified: 1631967302181
 Build-Jdk: 11.0.12
 Built-By: ydobrenchuk
 Bundle-ClassPath: .,rome-1.16.0.jar,rome-utils-1.16.0.jar,jdom2-2.0.6.ja
@@ -14,46 +14,53 @@ Embed-Dependency: rome,rome-utils,jdom2;scope=compile|runtime
 Embedded-Artifacts: rome-1.16.0.jar;g="com.rometools";a="rome";v="1.16.0
  ",rome-utils-1.16.0.jar;g="com.rometools";a="rome-utils";v="1.16.0",jdo
  m2-2.0.6.jar;g="org.jdom";a="jdom2";v="2.0.6"
-Export-Package: com.exadel.core.servlets;version="1.0";uses:="javax.serv
- let,org.apache.sling.api,org.apache.sling.api.servlets",com.exadel.core
- .utility;version="1.0.0",com.exadel.core.schedulers;version="1.0",com.e
- xadel.core.filters;version="1.0";uses:="javax.servlet",com.exadel.core.
- listeners;version="1.0";uses:="org.osgi.service.event",com.exadel.core.
- services;version="1.0.0";uses:="com.day.cq.wcm.api,com.exadel.core.mode
- ls,com.exadel.core.utility",com.exadel.core.exceptions;version="1.0.0",
- com.exadel.core.models;version="1.0";uses:="com.exadel.core.services,co
- m.exadel.core.utility,javax.annotation,javax.inject,org.apache.sling.ap
- i,org.apache.sling.api.resource,org.apache.sling.models.annotations,org
- .apache.sling.models.annotations.injectorspecific"
+Export-Package: com.exadel.core.annotation;version="1.0.0";uses:="org.ap
+ ache.sling.models.annotations,org.apache.sling.models.spi.injectorspeci
+ fic",com.exadel.core.servlets;version="1.0";uses:="javax.servlet,org.ap
+ ache.sling.api,org.apache.sling.api.servlets",com.exadel.core.utility;v
+ ersion="1.0.0",com.exadel.core.schedulers;version="1.0",com.exadel.core
+ .filters;version="1.0";uses:="javax.servlet",com.exadel.core.listeners;
+ version="1.0";uses:="org.osgi.service.event",com.exadel.core.services;v
+ ersion="1.0.0";uses:="com.day.cq.wcm.api,com.exadel.core.models,com.exa
+ del.core.utility",com.exadel.core.exceptions;version="1.0.0",com.exadel
+ .core.injectors;version="1.0.0";uses:="org.apache.sling.api,org.apache.
+ sling.models.spi",com.exadel.core.models;version="1.0";uses:="com.exade
+ l.core.services,com.exadel.core.utility,javax.annotation,javax.inject,o
+ rg.apache.sling.api,org.apache.sling.api.resource,org.apache.sling.mode
+ ls.annotations,org.apache.sling.models.annotations.injectorspecific"
 Import-Package: javax.inject;version="0.0.0",javax.annotation;version="0
  .0.0",com.day.cq.wcm.api;resolution:=optional;version="[1.28,2)",com.ex
- adel.core.exceptions;resolution:=optional;version="[1.0,2)",com.exadel.
- core.filters;resolution:=optional;version="[1.0,2)",com.exadel.core.lis
- teners;resolution:=optional;version="[1.0,2)",com.exadel.core.models;re
- solution:=optional;version="[1.0,2)",com.exadel.core.schedulers;resolut
- ion:=optional;version="[1.0,2)",com.exadel.core.services;resolution:=op
- tional;version="[1.0,2)",com.exadel.core.servlets;resolution:=optional;
- version="[1.0,2)",com.exadel.core.utility;resolution:=optional;version=
- "[1.0,2)",javax.jcr;resolution:=optional;version="[2.0,3)",javax.jcr.qu
- ery;resolution:=optional;version="[2.0,3)",javax.servlet;resolution:=op
- tional;version="[3.1,4)",javax.xml.namespace;resolution:=optional,javax
- .xml.parsers;resolution:=optional,javax.xml.stream;resolution:=optional
- ,javax.xml.stream.events;resolution:=optional,javax.xml.stream.util;res
- olution:=optional,javax.xml.transform;resolution:=optional,javax.xml.tr
- ansform.sax;resolution:=optional,javax.xml.transform.stream;resolution:
- =optional,javax.xml.validation;resolution:=optional,org.apache.sling.ap
- i;resolution:=optional;version="[2.3,3)",org.apache.sling.api.request;r
- esolution:=optional;version="[2.4,3)",org.apache.sling.api.resource;res
- olution:=optional;version="[2.11,3)",org.apache.sling.api.servlets;reso
- lution:=optional;version="[2.3,3)",org.apache.sling.commons.scheduler;r
- esolution:=optional;version="[2.5,3)",org.apache.sling.models.annotatio
- ns;resolution:=optional;version="[1.5,2)",org.apache.sling.models.annot
- ations.injectorspecific;resolution:=optional;version="[1.1,2)",org.jaxe
- n;resolution:=optional,org.jaxen.saxpath;resolution:=optional,org.jaxen
- .util;resolution:=optional,org.osgi.service.event;resolution:=optional;
- version="[1.3,2)",org.slf4j;resolution:=optional;version="[1.7,2)",org.
- w3c.dom;resolution:=optional,org.xml.sax;resolution:=optional,org.xml.s
- ax.ext;resolution:=optional,org.xml.sax.helpers;resolution:=optional
+ adel.core.annotation;resolution:=optional;version="[1.0,2)",com.exadel.
+ core.exceptions;resolution:=optional;version="[1.0,2)",com.exadel.core.
+ filters;resolution:=optional;version="[1.0,2)",com.exadel.core.injector
+ s;resolution:=optional;version="[1.0,2)",com.exadel.core.listeners;reso
+ lution:=optional;version="[1.0,2)",com.exadel.core.models;resolution:=o
+ ptional;version="[1.0,2)",com.exadel.core.schedulers;resolution:=option
+ al;version="[1.0,2)",com.exadel.core.services;resolution:=optional;vers
+ ion="[1.0,2)",com.exadel.core.servlets;resolution:=optional;version="[1
+ .0,2)",com.exadel.core.utility;resolution:=optional;version="[1.0,2)",j
+ avax.jcr;resolution:=optional;version="[2.0,3)",javax.jcr.query;resolut
+ ion:=optional;version="[2.0,3)",javax.servlet;resolution:=optional;vers
+ ion="[3.1,4)",javax.xml.namespace;resolution:=optional,javax.xml.parser
+ s;resolution:=optional,javax.xml.stream;resolution:=optional,javax.xml.
+ stream.events;resolution:=optional,javax.xml.stream.util;resolution:=op
+ tional,javax.xml.transform;resolution:=optional,javax.xml.transform.sax
+ ;resolution:=optional,javax.xml.transform.stream;resolution:=optional,j
+ avax.xml.validation;resolution:=optional,org.apache.sling.api;resolutio
+ n:=optional;version="[2.3,3)",org.apache.sling.api.request;resolution:=
+ optional;version="[2.4,3)",org.apache.sling.api.resource;resolution:=op
+ tional;version="[2.11,3)",org.apache.sling.api.servlets;resolution:=opt
+ ional;version="[2.3,3)",org.apache.sling.commons.scheduler;resolution:=
+ optional;version="[2.5,3)",org.apache.sling.models.annotations;resoluti
+ on:=optional;version="[1.5,2)",org.apache.sling.models.annotations.inje
+ ctorspecific;resolution:=optional;version="[1.1,2)",org.apache.sling.mo
+ dels.spi;resolution:=optional;version="[1.2,2)",org.apache.sling.models
+ .spi.injectorspecific;resolution:=optional;version="[1.1,2)",org.jaxen;
+ resolution:=optional,org.jaxen.saxpath;resolution:=optional,org.jaxen.u
+ til;resolution:=optional,org.osgi.service.event;resolution:=optional;ve
+ rsion="[1.3,2)",org.slf4j;resolution:=optional;version="[1.7,2)",org.w3
+ c.dom;resolution:=optional,org.xml.sax;resolution:=optional,org.xml.sax
+ .ext;resolution:=optional,org.xml.sax.helpers;resolution:=optional
 Provide-Capability: osgi.service;objectClass:List<String>="com.exadel.co
  re.services.LandingService";uses:="com.exadel.core.services",osgi.servi
  ce;objectClass:List<String>="com.exadel.core.services.PageService";uses
@@ -62,8 +69,10 @@ Provide-Capability: osgi.service;objectClass:List<String>="com.exadel.co
  i.service;objectClass:List<String>="java.lang.Runnable",osgi.service;ob
  jectClass:List<String>="javax.servlet.Filter";uses:="javax.servlet",osg
  i.service;objectClass:List<String>="javax.servlet.Servlet";uses:="javax
- .servlet",osgi.service;objectClass:List<String>="org.osgi.service.event
- .EventHandler";uses:="org.osgi.service.event"
+ .servlet",osgi.service;objectClass:List<String>="org.apache.sling.model
+ s.spi.Injector";uses:="org.apache.sling.models.spi",osgi.service;object
+ Class:List<String>="org.osgi.service.event.EventHandler";uses:="org.osg
+ i.service.event"
 Require-Capability: osgi.service;filter:="(objectClass=com.exadel.core.s
  ervices.LandingService)";effective:=active,osgi.service;filter:="(objec
  tClass=com.exadel.core.services.PageService)";effective:=active,osgi.se
@@ -75,12 +84,13 @@ Require-Capability: osgi.service;filter:="(objectClass=com.exadel.core.s
  on>=1.4.0)(!(version>=2.0.0)))",osgi.ee;filter:="(&(osgi.ee=JavaSE)(ver
  sion=1.8))"
 Service-Component: OSGI-INF/com.exadel.core.filters.LoggingFilter.xml,OS
- GI-INF/com.exadel.core.listeners.SimpleResourceListener.xml,OSGI-INF/co
- m.exadel.core.schedulers.LandingScheduler.xml,OSGI-INF/com.exadel.core.
- schedulers.NewsImportScheduler.xml,OSGI-INF/com.exadel.core.schedulers.
- SimpleScheduledTask.xml,OSGI-INF/com.exadel.core.services.impl.LandingS
- erviceImpl.xml,OSGI-INF/com.exadel.core.services.impl.PageServiceImpl.x
- ml,OSGI-INF/com.exadel.core.services.impl.RssImporterImpl.xml,OSGI-INF/
- com.exadel.core.servlets.SimpleServlet.xml
+ GI-INF/com.exadel.core.injectors.QueryInjector.xml,OSGI-INF/com.exadel.
+ core.listeners.SimpleResourceListener.xml,OSGI-INF/com.exadel.core.sche
+ dulers.LandingScheduler.xml,OSGI-INF/com.exadel.core.schedulers.NewsImp
+ ortScheduler.xml,OSGI-INF/com.exadel.core.schedulers.SimpleScheduledTas
+ k.xml,OSGI-INF/com.exadel.core.services.impl.LandingServiceImpl.xml,OSG
+ I-INF/com.exadel.core.services.impl.PageServiceImpl.xml,OSGI-INF/com.ex
+ adel.core.services.impl.RssImporterImpl.xml,OSGI-INF/com.exadel.core.se
+ rvlets.SimpleServlet.xml
 Sling-Model-Packages: com.exadel.core.models
 Tool: Bnd-5.1.1.202006162103

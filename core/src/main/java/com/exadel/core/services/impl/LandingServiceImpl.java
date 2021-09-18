@@ -79,9 +79,6 @@ public class LandingServiceImpl implements LandingService {
 
     @Override
     public List<ManualCard> getNews(int pageNum, int itemsPerPage) {
-        if (itemsPerPage == 0) {
-            itemsPerPage = 10;
-        }
         List<ManualCard> news = new ArrayList<>();
         final String query = "SELECT * FROM [nt:unstructured] AS node WHERE ISDESCENDANTNODE ([/content/dashboard/news])" +
                 "AND node.[sling:resourceType]='dashboard/components/container' AND [jcr:path] LIKE '%root/%'";

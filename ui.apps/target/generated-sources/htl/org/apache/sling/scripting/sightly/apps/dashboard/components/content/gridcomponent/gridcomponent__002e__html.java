@@ -35,12 +35,8 @@ public final class gridcomponent__002e__html extends RenderUnit {
 // Main Template Body -----------------------------------------------------------------------------
 
 Object _global_landing = null;
-Object _global_manualcard = null;
 Collection var_collectionvar0_list_coerced$ = null;
-Object _dynamic_par = bindings.get("par");
-out.write("<!DOCTYPE html>\n<html>\n<style>\n.wrapper {\n  display: grid;\n  grid-template-columns: repeat(3, 2fr);\n  grid-column-gap: 10px;\n  grid-row-gap: 1em;\n}\n    a.button {\n  background-color: #04AA6D;\n  border: none;\n  color: black;\n  font-weight: 600;\n  padding: 15px 32px;\n  text-align: center;\n  text-decoration: none;\n  display: inline-block;\n  font-size: 16px;\n}\n\n</style>\n<body>\n");
 _global_landing = renderContext.call("use", com.exadel.core.models.Landing.class.getName(), obj());
-_global_manualcard = renderContext.call("use", com.exadel.core.models.ManualCard.class.getName(), obj());
 {
     Object var_collectionvar0 = renderContext.getObjectModel().resolveProperty(_global_landing, "getCards");
     {
@@ -94,11 +90,6 @@ _global_manualcard = renderContext.call("use", com.exadel.core.models.ManualCard
                                             }
                                         }
                                         out.write(" class=\"button\">Read</a>\n    </div>\n");
-                                        {
-                                            String var_16 = (("<!--    <div data-sly-resource=\"" + renderContext.getObjectModel().toString(renderContext.call("xss", renderContext.call("uriManipulation", null, obj().with("path", _dynamic_par)), "comment"))) + "\" data-sly-unwrap></div>-->");
-                                            out.write(renderContext.getObjectModel().toString(var_16));
-                                        }
-                                        out.write("\n");
                                     }
                                 }
                                 var_index7++;
@@ -112,7 +103,7 @@ _global_manualcard = renderContext.call("use", com.exadel.core.models.ManualCard
     }
     var_collectionvar0_list_coerced$ = null;
 }
-out.write("\n<form action=\"landing.html?pageNum=1\" method=\"GET\"><button>pageNum</button> </form>\n</body>\n</html>");
+out.write("\n<div id=\"add_here\"></div>");
 
 
 // End Of Main Template Body ----------------------------------------------------------------------

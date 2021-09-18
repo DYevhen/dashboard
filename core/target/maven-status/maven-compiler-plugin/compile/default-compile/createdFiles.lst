@@ -8,7 +8,9 @@ com/exadel/core/servlets/package-info.class
 com/exadel/core/filters/package-info.class
 com/exadel/core/models/package-info.class
 com/exadel/core/schedulers/NewsImportScheduler$Config.class
+com/exadel/core/injectors/QueryInjector.class
 com/exadel/core/models/ColumnControl.class
+com/exadel/core/annotation/QueryParameter.class
 com/exadel/core/models/Landing.class
 com/exadel/core/servlets/SimpleServlet.class
 com/exadel/core/utility/Columns.class

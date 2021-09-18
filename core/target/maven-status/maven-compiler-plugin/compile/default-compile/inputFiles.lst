@@ -5,6 +5,7 @@
 /home/ydobrenchuk/IdeaProjects/dashboard/core/src/main/java/com/exadel/core/models/HelloWorldModel.java
 /home/ydobrenchuk/IdeaProjects/dashboard/core/src/main/java/com/exadel/core/utility/ManualCard.java
 /home/ydobrenchuk/IdeaProjects/dashboard/core/src/main/java/com/exadel/core/services/impl/RssImporterImpl.java
+/home/ydobrenchuk/IdeaProjects/dashboard/core/src/main/java/com/exadel/core/annotation/QueryParameter.java
 /home/ydobrenchuk/IdeaProjects/dashboard/core/src/main/java/com/exadel/core/models/ManualCard.java
 /home/ydobrenchuk/IdeaProjects/dashboard/core/src/main/java/com/exadel/core/services/impl/LandingServiceImpl.java
 /home/ydobrenchuk/IdeaProjects/dashboard/core/src/main/java/com/exadel/core/services/LandingService.java
@@ -13,6 +14,7 @@
 /home/ydobrenchuk/IdeaProjects/dashboard/core/src/main/java/com/exadel/core/utility/Columns.java
 /home/ydobrenchuk/IdeaProjects/dashboard/core/src/main/java/com/exadel/core/services/RssImporter.java
 /home/ydobrenchuk/IdeaProjects/dashboard/core/src/main/java/com/exadel/core/models/Card.java
+/home/ydobrenchuk/IdeaProjects/dashboard/core/src/main/java/com/exadel/core/injectors/QueryInjector.java
 /home/ydobrenchuk/IdeaProjects/dashboard/core/src/main/java/com/exadel/core/services/impl/PageServiceImpl.java
 /home/ydobrenchuk/IdeaProjects/dashboard/core/src/main/java/com/exadel/core/services/PageService.java
 /home/ydobrenchuk/IdeaProjects/dashboard/core/src/main/java/com/exadel/core/models/package-info.java
