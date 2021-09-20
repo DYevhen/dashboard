@@ -1,4 +1,5 @@
 let pageNum = 1;
+let itemsPerPage = 6;
 
 function loadNews(){
     console.log("we are in load news");
@@ -17,7 +18,8 @@ function loadNews(){
            }
         }
     };
-    xmlhttp.open("GET", "/content/dashboard/us/en/landing/jcr:content/root/container/gridcomponent.html?wcmmode=disabled&pageNum="+pageNum, true);
+    xmlhttp.open("GET", "/content/dashboard/us/en/landing/jcr:content/root/container/gridcomponent.html?wcmmode=disabled&pageNum="+pageNum+
+                 "&itemsPerPage="+itemsPerPage, true);
     xmlhttp.send();
     pageNum += 1;
 }
