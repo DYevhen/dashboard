@@ -37,32 +37,33 @@ public class PageServiceImpl implements PageService {
 
     @Override
     public Page createCard(ManualCard manualCard, Date lastExecution) {
-        ResourceResolver resourceResolver = null;
         Page page = null;
-        ResourceResolver resolver;
         Map<String, Object> paramMap = new HashMap<>();
         paramMap.put(ResourceResolverFactory.SUBSERVICE, USER);
-        try {
+        try (ResourceResolver resolver = resolverFactory.getServiceResourceResolver(paramMap)){
             if (manualCard.getPubDate().before(lastExecution)) {
                 throw new DuplicateNewsException();
             }
-            resolver = resolverFactory.getServiceResourceResolver(paramMap);
             session = resolver.adaptTo(Session.class);
             pageManager = resolver.adaptTo(PageManager.class);
             page = pageManager.create(PAGE_PATH, "news_page", PAGE_TAMPLATE, "News");
             if (page != null) {
                 Node newNode = page.adaptTo(Node.class);
-                assert newNode != null;
                 Node cont = newNode.getNode("jcr:content");
                 if (cont != null) {
+                    String link = String.format("http://localhost:4502%s.html", cont.getParent().getPath());
                     Node description = cont.getNode("root/container/text");
                     Node image = cont.getNode("root/container/myimage");
+                    Node button = cont.getNode("root/container/button");
                     Node topic = cont.getNode("root/container/text_1716190574");
                     image.setProperty("link", manualCard.getImage());
                     image.setProperty("sling:resourceType", "dashboard/components/content/myImage");
                     topic.setProperty("text", String.format("<h2>%s</h2>", manualCard.getTopic()));
                     topic.setProperty("textIsRich", "true");
                     description.setProperty("text", manualCard.getArticle());
+                    button.setProperty("link",link);
+                    cont.setProperty("isPosted", false);
+                    cont.setProperty("Name", page.getName());
                     session.save();
                 }
             }

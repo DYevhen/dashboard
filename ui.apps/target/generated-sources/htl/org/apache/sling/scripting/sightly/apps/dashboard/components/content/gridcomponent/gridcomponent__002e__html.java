@@ -34,15 +34,97 @@ public final class gridcomponent__002e__html extends RenderUnit {
                                 RenderContext renderContext) {
 // Main Template Body -----------------------------------------------------------------------------
 
-Object _global_manualcard = null;
-Object _dynamic_par = bindings.get("par");
-_global_manualcard = renderContext.call("use", com.exadel.core.models.ManualCard.class.getName(), obj());
-out.write("<div></div>\n<!DOCTYPE html>\n<html>\n<style>\n.wrapper {\n  display: grid;\n  grid-template-columns: repeat(3, 2fr);\n  grid-column-gap: 10px;\n  grid-row-gap: 1em;\n}\n</style>\n<body>\n<div class=\"wrapper\">\n    ");
+Object _global_landing = null;
+Collection var_collectionvar0_list_coerced$ = null;
+_global_landing = renderContext.call("use", com.exadel.core.models.Landing.class.getName(), obj());
 {
-    Object var_resourcecontent1 = renderContext.call("includeResource", null, obj().with("path", _dynamic_par).with("resourceType", "wcm/foundation/components/parsys"));
-    out.write(renderContext.getObjectModel().toString(var_resourcecontent1));
+    Object var_collectionvar0 = renderContext.getObjectModel().resolveProperty(_global_landing, "getCards");
+    {
+        long var_size1 = ((var_collectionvar0_list_coerced$ == null ? (var_collectionvar0_list_coerced$ = renderContext.getObjectModel().toCollection(var_collectionvar0)) : var_collectionvar0_list_coerced$).size());
+        {
+            boolean var_notempty2 = (var_size1 > 0);
+            if (var_notempty2) {
+                {
+                    long var_end5 = var_size1;
+                    {
+                        boolean var_validstartstepend6 = (((0 < var_size1) && true) && (var_end5 > 0));
+                        if (var_validstartstepend6) {
+                            out.write("<div class=\"wrapper\">");
+                            if (var_collectionvar0_list_coerced$ == null) {
+                                var_collectionvar0_list_coerced$ = renderContext.getObjectModel().toCollection(var_collectionvar0);
+                            }
+                            long var_index7 = 0;
+                            for (Object card : var_collectionvar0_list_coerced$) {
+                                {
+                                    boolean var_traversal9 = (((var_index7 >= 0) && (var_index7 <= var_end5)) && true);
+                                    if (var_traversal9) {
+                                        out.write("\n    <div>\n        <b>");
+                                        {
+                                            Object var_10 = renderContext.call("xss", renderContext.getObjectModel().resolveProperty(card, "topic"), "html");
+                                            out.write(renderContext.getObjectModel().toString(var_10));
+                                        }
+                                        out.write("</b>\n        <p><img");
+                                        {
+                                            Object var_attrvalue11 = renderContext.getObjectModel().resolveProperty(card, "image");
+                                            {
+                                                Object var_attrcontent12 = renderContext.call("xss", var_attrvalue11, "uri");
+                                                {
+                                                    boolean var_shoulddisplayattr14 = (((null != var_attrcontent12) && (!"".equals(var_attrcontent12))) && ((!"".equals(var_attrvalue11)) && (!((Object)false).equals(var_attrvalue11))));
+                                                    if (var_shoulddisplayattr14) {
+                                                        out.write(" src");
+                                                        {
+                                                            boolean var_istrueattr13 = (var_attrvalue11.equals(true));
+                                                            if (!var_istrueattr13) {
+                                                                out.write("=\"");
+                                                                out.write(renderContext.getObjectModel().toString(var_attrcontent12));
+                                                                out.write("\"");
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        out.write("/></p>\n        <i>");
+                                        {
+                                            Object var_15 = renderContext.call("xss", renderContext.getObjectModel().resolveProperty(card, "article"), "html");
+                                            out.write(renderContext.getObjectModel().toString(var_15));
+                                        }
+                                        out.write("</i>\n        <br/>\n        <a");
+                                        {
+                                            Object var_attrvalue16 = renderContext.getObjectModel().resolveProperty(card, "link");
+                                            {
+                                                Object var_attrcontent17 = renderContext.call("xss", var_attrvalue16, "uri");
+                                                {
+                                                    boolean var_shoulddisplayattr19 = (((null != var_attrcontent17) && (!"".equals(var_attrcontent17))) && ((!"".equals(var_attrvalue16)) && (!((Object)false).equals(var_attrvalue16))));
+                                                    if (var_shoulddisplayattr19) {
+                                                        out.write(" href");
+                                                        {
+                                                            boolean var_istrueattr18 = (var_attrvalue16.equals(true));
+                                                            if (!var_istrueattr18) {
+                                                                out.write("=\"");
+                                                                out.write(renderContext.getObjectModel().toString(var_attrcontent17));
+                                                                out.write("\"");
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        out.write(" class=\"button\">Read</a>\n    </div>\n");
+                                    }
+                                }
+                                var_index7++;
+                            }
+                            out.write("</div>");
+                        }
+                    }
+                }
+            }
+        }
+    }
+    var_collectionvar0_list_coerced$ = null;
 }
-out.write("\n</div>\n</body>\n</html>");
+out.write("\n<div id=\"add_here\"></div>");
 
 
 // End Of Main Template Body ----------------------------------------------------------------------

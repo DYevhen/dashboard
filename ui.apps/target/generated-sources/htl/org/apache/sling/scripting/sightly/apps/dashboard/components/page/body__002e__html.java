@@ -36,7 +36,7 @@ public final class body__002e__html extends RenderUnit {
 
 Object _global_templatedcontainer = null;
 Collection var_collectionvar0_list_coerced$ = null;
-out.write("<style>\n/* Add a black background color to the top navigation */\n.topnav {\n  background-color: #333;\n  overflow: hidden;\n}\n\n/* Style the links inside the navigation bar */\n.topnav a {\n  float: left;\n  color: #f2f2f2;\n  text-align: center;\n  padding: 14px 16px;\n  text-decoration: none;\n  font-size: 17px;\n}\n\n/* Change the color of links on hover */\n.topnav a:hover {\n  background-color: #ddd;\n  color: black;\n}\n\n/* Add a color to the active/current link */\n.topnav a.active {\n  background-color: #04AA6D;\n  color: white;\n}\n</style>\n\n<div class=\"topnav\">\n  <a class=\"active\">NEWS</a>\n</div>\n");
+out.write("<div class=\"topnav\">\n  <a class=\"active\">NEWS</a>\n</div>\n  ");
 _global_templatedcontainer = renderContext.call("use", com.day.cq.wcm.foundation.TemplatedContainer.class.getName(), obj());
 {
     Object var_collectionvar0 = renderContext.getObjectModel().resolveProperty(_global_templatedcontainer, "structureResources");
@@ -74,6 +74,7 @@ _global_templatedcontainer = renderContext.call("use", com.day.cq.wcm.foundation
     }
     var_collectionvar0_list_coerced$ = null;
 }
+out.write("\n");
 
 
 // End Of Main Template Body ----------------------------------------------------------------------

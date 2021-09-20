@@ -35,14 +35,14 @@ public final class manualcard__002e__html extends RenderUnit {
 // Main Template Body -----------------------------------------------------------------------------
 
 Object _global_manualcard = null;
-out.write("<!DOCTYPE html>\n<html>\n");
+out.write("<!DOCTYPE html>\n<html>\n<style>\n    a.button {\n  background-color: #04AA6D;\n  border: none;\n  color: black;\n  font-weight: 600;\n  padding: 15px 32px;\n  text-align: center;\n  text-decoration: none;\n  display: inline-block;\n  font-size: 16px;\n}\n</style>\n");
 _global_manualcard = renderContext.call("use", com.exadel.core.models.ManualCard.class.getName(), obj());
-out.write("<div></div>\n<div><h1>");
+out.write("<div></div>\n<div>");
 {
-    Object var_0 = renderContext.call("xss", renderContext.getObjectModel().resolveProperty(_global_manualcard, "topic"), "text");
+    Object var_0 = renderContext.call("xss", renderContext.getObjectModel().resolveProperty(_global_manualcard, "topic"), "html");
     out.write(renderContext.getObjectModel().toString(var_0));
 }
-out.write("</h1></div>\n<div>");
+out.write("</div>\n<div>");
 {
     Object var_1 = renderContext.call("xss", renderContext.getObjectModel().resolveProperty(_global_manualcard, "article"), "html");
     out.write(renderContext.getObjectModel().toString(var_1));
@@ -68,12 +68,7 @@ out.write("</div>\n<div><a");
         }
     }
 }
-out.write(">");
-{
-    Object var_6 = renderContext.call("xss", renderContext.getObjectModel().resolveProperty(_global_manualcard, "link"), "text");
-    out.write(renderContext.getObjectModel().toString(var_6));
-}
-out.write("</a></div>\n</html>\n\n");
+out.write(" class=\"button\">Read</a>???</div>\n</html>\n\n");
 
 
 // End Of Main Template Body ----------------------------------------------------------------------

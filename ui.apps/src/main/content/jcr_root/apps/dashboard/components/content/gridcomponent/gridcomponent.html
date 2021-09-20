@@ -1,17 +1,11 @@
-<div data-sly-use.manualcard="${'com.exadel.core.models.ManualCard'}"></div>
-<!DOCTYPE html>
-<html>
-<style>
-.wrapper {
-  display: grid;
-  grid-template-columns: repeat(3, 2fr);
-  grid-column-gap: 10px;
-  grid-row-gap: 1em;
-}
-</style>
-<body>
-<div class="wrapper">
-    <div data-sly-resource="${@ path=par, resourceType='wcm/foundation/components/parsys'}" data-sly-unwrap></div>
+<div class ="wrapper" data-sly-use.landing="${'com.exadel.core.models.Landing'}"
+     data-sly-list.card="${landing.getCards}">
+    <div>
+        <b>${card.topic @ context='html'}</b>
+        <p><img src="${card.image}" ></p>
+        <i>${card.article @ context='html'}</i>
+        <br>
+        <a href="${card.link}" class="button">Read</a>
+    </div>
 </div>
-</body>
-</html>
+<div id="add_here"></div>

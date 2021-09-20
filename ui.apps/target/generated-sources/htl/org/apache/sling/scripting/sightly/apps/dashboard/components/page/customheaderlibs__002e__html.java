@@ -47,6 +47,17 @@ out.write("\n\t");
         }
     }
 }
+out.write("\n\t");
+{
+    Object var_templatevar2 = renderContext.getObjectModel().resolveProperty(_global_clientlib, "js");
+    {
+        String var_templateoptions3_field$_categories = "dashboard.page";
+        {
+            java.util.Map var_templateoptions3 = obj().with("categories", var_templateoptions3_field$_categories);
+            callUnit(out, renderContext, var_templatevar2, var_templateoptions3);
+        }
+    }
+}
 out.write("\n\n\n");
 
 
