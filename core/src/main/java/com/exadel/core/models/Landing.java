@@ -40,7 +40,7 @@ public class Landing {
     @QueryParameter(name = "pageNum", defaultValue = "0")
     private String pageNum;
 
-    @QueryParameter(name = "itemsPerPage", defaultValue = "12")
+    @QueryParameter(name = "itemsPerPage", defaultValue = "9")
     private String itemsPerPage;
 
     @PostConstruct

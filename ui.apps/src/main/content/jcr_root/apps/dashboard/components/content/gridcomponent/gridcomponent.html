@@ -2,6 +2,7 @@
      data-sly-list.card="${landing.getCards}">
     <div>
         <b>${card.topic @ context='html'}</b>
+        <p><img src="${card.image}" ></p>
         <i>${card.article @ context='html'}</i>
         <br>
         <a href="${card.link}" class="button">Read</a>

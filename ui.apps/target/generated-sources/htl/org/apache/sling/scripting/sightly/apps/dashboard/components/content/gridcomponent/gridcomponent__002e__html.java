@@ -63,25 +63,46 @@ _global_landing = renderContext.call("use", com.exadel.core.models.Landing.class
                                             Object var_10 = renderContext.call("xss", renderContext.getObjectModel().resolveProperty(card, "topic"), "html");
                                             out.write(renderContext.getObjectModel().toString(var_10));
                                         }
-                                        out.write("</b>\n        <i>");
+                                        out.write("</b>\n        <p><img");
                                         {
-                                            Object var_11 = renderContext.call("xss", renderContext.getObjectModel().resolveProperty(card, "article"), "html");
-                                            out.write(renderContext.getObjectModel().toString(var_11));
+                                            Object var_attrvalue11 = renderContext.getObjectModel().resolveProperty(card, "image");
+                                            {
+                                                Object var_attrcontent12 = renderContext.call("xss", var_attrvalue11, "uri");
+                                                {
+                                                    boolean var_shoulddisplayattr14 = (((null != var_attrcontent12) && (!"".equals(var_attrcontent12))) && ((!"".equals(var_attrvalue11)) && (!((Object)false).equals(var_attrvalue11))));
+                                                    if (var_shoulddisplayattr14) {
+                                                        out.write(" src");
+                                                        {
+                                                            boolean var_istrueattr13 = (var_attrvalue11.equals(true));
+                                                            if (!var_istrueattr13) {
+                                                                out.write("=\"");
+                                                                out.write(renderContext.getObjectModel().toString(var_attrcontent12));
+                                                                out.write("\"");
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        out.write("/></p>\n        <i>");
+                                        {
+                                            Object var_15 = renderContext.call("xss", renderContext.getObjectModel().resolveProperty(card, "article"), "html");
+                                            out.write(renderContext.getObjectModel().toString(var_15));
                                         }
                                         out.write("</i>\n        <br/>\n        <a");
                                         {
-                                            Object var_attrvalue12 = renderContext.getObjectModel().resolveProperty(card, "link");
+                                            Object var_attrvalue16 = renderContext.getObjectModel().resolveProperty(card, "link");
                                             {
-                                                Object var_attrcontent13 = renderContext.call("xss", var_attrvalue12, "uri");
+                                                Object var_attrcontent17 = renderContext.call("xss", var_attrvalue16, "uri");
                                                 {
-                                                    boolean var_shoulddisplayattr15 = (((null != var_attrcontent13) && (!"".equals(var_attrcontent13))) && ((!"".equals(var_attrvalue12)) && (!((Object)false).equals(var_attrvalue12))));
-                                                    if (var_shoulddisplayattr15) {
+                                                    boolean var_shoulddisplayattr19 = (((null != var_attrcontent17) && (!"".equals(var_attrcontent17))) && ((!"".equals(var_attrvalue16)) && (!((Object)false).equals(var_attrvalue16))));
+                                                    if (var_shoulddisplayattr19) {
                                                         out.write(" href");
                                                         {
-                                                            boolean var_istrueattr14 = (var_attrvalue12.equals(true));
-                                                            if (!var_istrueattr14) {
+                                                            boolean var_istrueattr18 = (var_attrvalue16.equals(true));
+                                                            if (!var_istrueattr18) {
                                                                 out.write("=\"");
-                                                                out.write(renderContext.getObjectModel().toString(var_attrcontent13));
+                                                                out.write(renderContext.getObjectModel().toString(var_attrcontent17));
                                                                 out.write("\"");
                                                             }
                                                         }

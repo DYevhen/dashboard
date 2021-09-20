@@ -24,6 +24,9 @@ public class ManualCard {
     @ValueMapValue(name = "text/text")
     private String article;
 
+    @ValueMapValue(name = "myimage/link")
+    private String image;
+
     @ValueMapValue(name = "button/link")
     private String link;
 }

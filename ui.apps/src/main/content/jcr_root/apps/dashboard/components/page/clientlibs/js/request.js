@@ -9,6 +9,7 @@ function loadNews(){
            if (xmlhttp.status == 200) {
                console.log(xmlhttp);
                document.getElementById("add_here").innerHTML += xmlhttp.response;
+               pageNum += 1;
            }
            else if (xmlhttp.status == 400) {
               alert('There was an error 400');
@@ -21,7 +22,7 @@ function loadNews(){
     xmlhttp.open("GET", "/content/dashboard/us/en/landing/jcr:content/root/container/gridcomponent.html?wcmmode=disabled&pageNum="+pageNum+
                  "&itemsPerPage="+itemsPerPage, true);
     xmlhttp.send();
-    pageNum += 1;
+
 }
 
 window.addEventListener('scroll',()=>{
