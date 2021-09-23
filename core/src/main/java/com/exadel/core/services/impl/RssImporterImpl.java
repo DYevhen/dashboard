@@ -2,9 +2,7 @@ package com.exadel.core.services.impl;
 
 import com.exadel.core.utility.ManualCard;
 import com.exadel.core.services.RssImporter;
-import com.rometools.rome.feed.rss.Enclosure;
 import com.rometools.rome.feed.synd.SyndEnclosure;
-import com.rometools.rome.feed.synd.SyndEntry;
 import com.rometools.rome.feed.synd.SyndFeed;
 import com.rometools.rome.io.FeedException;
 import com.rometools.rome.io.SyndFeedInput;
@@ -16,7 +14,6 @@ import org.slf4j.LoggerFactory;
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 @Component(service = RssImporter.class)
@@ -29,7 +26,7 @@ public class RssImporterImpl implements RssImporter {
         SyndFeedInput input = new SyndFeedInput();
         SyndFeed feed = null;
         try{
-            URL feedUrl = new URL("https://www.nasa.gov/rss/dyn/breaking_news.rss");
+            URL feedUrl = new URL("https://www.nasa.gov/rss/dyn/lg_image_of_the_day.rss");
             feed = input.build(new XmlReader(feedUrl));
         } catch (IOException | FeedException e) {
             LOG.error(e.getMessage());

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:oak="http://jackrabbit.apache.org/oak/ns/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:rep="internal"
+          jcr:mixinTypes="[rep:AccessControllable]"
+          jcr:primaryType="nt:unstructured">
+    <socialLucene/>
+    <workflowDataLucene/>
+    <slingeventJob/>
+    <jcrLanguage/>
+    <versionStoreIndex/>
+    <repMembers/>
+    <cqReportsLucene/>
+    <commerceLucene/>
+    <counter/>
+    <authorizables/>
+    <enablementResourceName/>
+    <externalPrincipalNames/>
+    <cmLucene/>
+    <cqProjectLucene/>
+    <ntFolderDamLucene/>
+    <acPrincipalName/>
+    <uuid/>
+    <damAssetLucene/>
+    <rep:policy/>
+    <cqPayloadPath/>
+    <nodetypeLucene/>
+    <nodetype/>
+    <MyIndex
+            jcr:primaryType="oak:QueryIndexDefinition"
+            async="[async,nrt]"
+            compatVersion="{Long}2"
+            evaluatePathRestrictions="{Boolean}true"
+            reindex="{Boolean}false"
+            reindexCount="{Long}1"
+            seed="{Long}1123727366897157782"
+            supersedes="[/oak:index/cqDefaultFormFor,/oak:index/fpContentType,/oak:index/cqOwnerCanvasPage,/oak:index/cqVariantFamily,/oak:index/damStatus,/oak:index/campaignpath,/oak:index/slingVanityPath,/oak:index/type,/oak:index/contentPath,/oak:index/cq:masterBuildingBlockPath,/oak:index/containeeInstanceId,/oak:index/cqCloudServiceConfigs,/oak:index/slingAlias,/oak:index/cqCugEnabled,/oak:index/active,/oak:index/cq:masterBuildingBlock,/oak:index/cqAcUUID,/oak:index/cqKeywords,/oak:index/cqCloudServiceConfig,/oak:index/cqConf,/oak:index/cq:targetOfferId,/oak:index/postId,/oak:index/verb,/oak:index/extensionType,/oak:index/fpNodeType,/oak:index/guideComponentType,/oak:index/cqMaster,/oak:index/cqIsCommunitySite,/oak:index/deviceIdentificationMode,/oak:index/lockCreated,/oak:index/processingProfile,/oak:index/ec-uuid,/oak:index/slingResources,/oak:index/slingResourceType,/oak:index/subType,/oak:index/slingResourceSuperType,/oak:index/damS7watch,/oak:index/jcrLockOwner,/oak:index/cqTemplate,/oak:index/fragmentPath]"
+            type="lucene">
+        <indexRules jcr:primaryType="nt:unstructured">
+            <nt:base jcr:primaryType="nt:unstructured">
+                <properties jcr:primaryType="nt:unstructured">
+                    <text
+                            jcr:primaryType="nt:unstructured"
+                            name="text"
+                            propertyIndex="{Boolean}true"
+                            type="String"/>
+                </properties>
+            </nt:base>
+        </indexRules>
+    </MyIndex>
+    <reference/>
+    <principalName/>
+    <cqTagLucene/>
+    <lucene/>
+    <repTokenIndex/>
+    <externalId/>
+    <authorizableId/>
+    <cqPageLucene/>
+</jcr:root>

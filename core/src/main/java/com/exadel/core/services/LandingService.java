@@ -1,12 +1,9 @@
 package com.exadel.core.services;
-import com.day.cq.wcm.api.Page;
 import com.exadel.core.models.ManualCard;
 
-import java.util.List;
+import java.util.Set;
 
 public interface LandingService {
 
-    void fillLanding();
-
-    List<ManualCard> getNews(int pageNum, int itemsPerPage);
+    Set<ManualCard> getNews(String searchText, int pageNum, int itemsPerPage);
 }

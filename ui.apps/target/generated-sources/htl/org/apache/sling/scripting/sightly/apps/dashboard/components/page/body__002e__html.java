@@ -36,7 +36,7 @@ public final class body__002e__html extends RenderUnit {
 
 Object _global_templatedcontainer = null;
 Collection var_collectionvar0_list_coerced$ = null;
-out.write("<div class=\"topnav\">\n  <a class=\"active\">NEWS</a>\n</div>\n  ");
+out.write("<div class=\"topnav\">\n  <a class=\"active\">NEWS</a>\n  <a> </a>\n  <form method=\"get\">\n    <div class=\"search\">\n      <input name=\"searchText\" id=\"searchText\" type=\"text\" placeholder=\"text...\"/>\n    </div>\n  </form>\n</div>\n  ");
 _global_templatedcontainer = renderContext.call("use", com.day.cq.wcm.foundation.TemplatedContainer.class.getName(), obj());
 {
     Object var_collectionvar0 = renderContext.getObjectModel().resolveProperty(_global_templatedcontainer, "structureResources");

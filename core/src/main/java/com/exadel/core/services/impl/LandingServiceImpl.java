@@ -1,7 +1,5 @@
 package com.exadel.core.services.impl;
 
-import com.day.cq.search.QueryBuilder;
-import com.day.cq.wcm.api.Page;
 import com.day.cq.wcm.api.PageManager;
 import com.exadel.core.models.ManualCard;
 import com.exadel.core.services.LandingService;
@@ -18,10 +16,7 @@ import javax.jcr.RepositoryException;
 import javax.jcr.Session;
 import javax.jcr.query.Query;
 import javax.jcr.query.QueryResult;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Slf4j
 @Component(service = LandingService.class)
@@ -36,52 +31,24 @@ public class LandingServiceImpl implements LandingService {
     private Session session;
 
     @Override
-    public void fillLanding() {
-        final String query = "SELECT * FROM [cq:PageContent] AS node " +
-                "WHERE ISDESCENDANTNODE ([/content/dashboard/news]) " +
-                "AND node.[isPosted]='false'";
-        QueryResult queryResult;
-        Map<String, Object> paramMap = new HashMap<>();
-        paramMap.put(ResourceResolverFactory.SUBSERVICE, USER);
-        try (ResourceResolver resolver = resolverFactory.getServiceResourceResolver(paramMap)) {
-            session = resolver.adaptTo(Session.class);
-            pageManager = resolver.adaptTo(PageManager.class);
-            queryResult = session.getWorkspace().getQueryManager().createQuery(query,"JCR-SQL2").execute();
-            Node root = pageManager.getPage(LANDING_PATH).adaptTo(Node.class).getNode("jcr:content");
-            if (root == null) {
-                throw new RepositoryException("jcr:content is null");
-            }
-            NodeIterator iterator = queryResult.getNodes();
-            while (iterator.hasNext()) {
-                Node content = iterator.nextNode();
-                createCard(content,root);
-            }
-            session.save();
-        } catch (LoginException | RepositoryException e) {
-            log.error("Cannot fill landing page", e);
+    public Set<ManualCard> getNews(String searchText, int pageNum, int itemsPerPage) {
+        Set<ManualCard> news = new HashSet<>();
+        String query;
+        final String defaultQuery = "SELECT * FROM [nt:unstructured] AS node WHERE ISDESCENDANTNODE ([/content/dashboard/news])" +
+                    "AND node.[sling:resourceType]='dashboard/components/container' AND [jcr:path] LIKE '%root/%' ORDER BY node.[pubDate]";
+        String withKeyWord =
+                "SELECT node.* FROM [nt:unstructured] AS node " +
+                "INNER JOIN [nt:unstructured] AS child ON ISDESCENDANTNODE (child, node) " +
+                "WHERE ISDESCENDANTNODE (node, '/content/dashboard/news') " +
+                "AND node.[sling:resourceType]='dashboard/components/container' " +
+                "AND node.[jcr:path] LIKE '%root/%' " +
+                "AND LOWER(child.[text]) LIKE '%"+searchText+"%' " +
+                "ORDER BY node.[pubDate]";
+        if (searchText.equals("") || searchText.equals("null")) {
+            query = defaultQuery;
+        } else {
+            query = withKeyWord;
         }
-    }
-
-    private void createCard(Node content, Node root) throws RepositoryException {
-        String resourceType = "dashboard/components/content/manualcard";
-        String link = String.format("http://localhost:4502%s.html", content.getParent().getPath());
-        Node news = root.addNode(String.format("root/container/gridcomponent/null/%s",content.getProperty("Name").getValue()));
-        news.setProperty("sling:resourceType", resourceType);
-        Node description = content.getNode("root/container/text");
-        Node image = content.getNode("root/container/myimage");
-        Node topic = content.getNode("root/container/text_1716190574");
-        news.setProperty("article", description.getProperty("text").getValue());
-        news.setProperty("topic", topic.getProperty("text").getValue());
-        news.setProperty("textIsRich", "true");
-        news.setProperty("link",link);
-        content.setProperty("isPosted", true);
-    }
-
-    @Override
-    public List<ManualCard> getNews(int pageNum, int itemsPerPage) {
-        List<ManualCard> news = new ArrayList<>();
-            final String query = "SELECT * FROM [nt:unstructured] AS node WHERE ISDESCENDANTNODE ([/content/dashboard/news])" +
-                    "AND node.[sling:resourceType]='dashboard/components/container' AND [jcr:path] LIKE '%root/%'";
         QueryResult queryResult;
         Map<String, Object> paramMap = new HashMap<>();
         paramMap.put(ResourceResolverFactory.SUBSERVICE, USER);

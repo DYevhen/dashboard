@@ -1,0 +1,15 @@
+.search {
+    float:center
+    position: relative;
+}
+.search input[type=text] {
+  float: center;
+  padding: 6px;
+  margin-top: 8px;
+  margin-right: 16px;
+  box-sizing: border-box;
+  border: 2px solid black;
+  border-radius: 4px;
+  font-size: 17px;
+}
+

@@ -56,7 +56,7 @@ out.write("<div>\n    <image");
         }
     }
 }
-out.write("></image>\n</div>");
+out.write(" width=\"800\" height=\"600\"></image>\n</div>");
 
 
 // End Of Main Template Body ----------------------------------------------------------------------

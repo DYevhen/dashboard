@@ -84,7 +84,7 @@ _global_landing = renderContext.call("use", com.exadel.core.models.Landing.class
                                                 }
                                             }
                                         }
-                                        out.write("/></p>\n        <i>");
+                                        out.write(" width=\"350\" height=\"300\"/></p>\n        <i>");
                                         {
                                             Object var_15 = renderContext.call("xss", renderContext.getObjectModel().resolveProperty(card, "article"), "html");
                                             out.write(renderContext.getObjectModel().toString(var_15));
