@@ -1,6 +1,5 @@
 /home/ydobrenchuk/IdeaProjects/dashboard/core/src/main/java/com/exadel/core/schedulers/SimpleScheduledTask.java
 /home/ydobrenchuk/IdeaProjects/dashboard/core/src/main/java/com/exadel/core/listeners/SimpleResourceListener.java
-/home/ydobrenchuk/IdeaProjects/dashboard/core/src/main/java/com/exadel/core/schedulers/LandingScheduler.java
 /home/ydobrenchuk/IdeaProjects/dashboard/core/src/main/java/com/exadel/core/models/Landing.java
 /home/ydobrenchuk/IdeaProjects/dashboard/core/src/main/java/com/exadel/core/models/HelloWorldModel.java
 /home/ydobrenchuk/IdeaProjects/dashboard/core/src/main/java/com/exadel/core/utility/ManualCard.java

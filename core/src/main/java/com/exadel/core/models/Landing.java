@@ -12,7 +12,7 @@ import org.apache.sling.models.annotations.injectorspecific.Self;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 
 import javax.annotation.PostConstruct;
-import java.util.Set;
+import java.util.List;
 
 @Getter
 @Slf4j
@@ -30,7 +30,7 @@ public class Landing {
     private LandingService landingService;
 
     @ValueMapValue
-    private Set<ManualCard> cards;
+    private List<ManualCard> cards;
 
     @QueryParameter(name = "pageNum", defaultValue = "0")
     private String pageNum;
@@ -41,8 +41,11 @@ public class Landing {
     @QueryParameter(name = "searchText", defaultValue = "")
     private String searchText;
 
+    @QueryParameter(name = "sortBy", defaultValue = "")
+    private String sortBy;
+
     @PostConstruct
     public void init() {
-        cards = landingService.getNews(searchText.toLowerCase(), Integer.parseInt(pageNum), Integer.parseInt(itemsPerPage));
+        cards = landingService.getNews(searchText.toLowerCase(), sortBy, Integer.parseInt(pageNum), Integer.parseInt(itemsPerPage));
     }
 }

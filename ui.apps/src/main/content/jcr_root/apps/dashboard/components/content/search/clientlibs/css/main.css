@@ -13,3 +13,9 @@
   font-size: 17px;
 }
 
+.search label[for=sortBy]{
+  color:white;
+  font-weight: 600;
+  font-size: 20px;
+}
+

@@ -17,5 +17,8 @@
         <module name="dashboard.ui.config" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="ui.index" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

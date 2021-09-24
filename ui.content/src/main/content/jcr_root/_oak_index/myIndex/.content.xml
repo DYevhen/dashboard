@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:oak="http://jackrabbit.apache.org/oak/ns/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:rep="internal"
+          jcr:mixinTypes="[rep:AccessControllable]"
+          jcr:primaryType="oak:QueryIndexDefinition"
+          async="[async,nrt]"
+          compatVersion="{Long}2"
+          evaluatePathRestrictions="{Boolean}true"
+          reindex="{Boolean}false"
+          reindexCount="{Long}1"
+          seed="{Long}1123727366897157782"
+          type="lucene">
+        <indexRules jcr:primaryType="nt:unstructured">
+            <nt:unstructured jcr:primaryType="nt:unstructured">
+                <properties jcr:primaryType="nt:unstructured">
+                    <text
+                            jcr:primaryType="nt:unstructured"
+                            name="text"
+                            propertyIndex="{Boolean}true"
+                            type="String"/>
+                    <keywords
+                            jcr:primaryType="nt:unstructured"
+                            name="cq:keyword"
+                            sync="true"
+                    />
+                </properties>
+            </nt:unstructured>
+        </indexRules>
+</jcr:root>

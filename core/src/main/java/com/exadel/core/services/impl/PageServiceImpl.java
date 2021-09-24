@@ -54,8 +54,10 @@ public class PageServiceImpl implements PageService {
                     container.setProperty("pubDate", newNode.getProperty("jcr:created").getValue());
                     image.setProperty("link", manualCard.getImage());
                     image.setProperty("sling:resourceType", "dashboard/components/content/myImage");
+                    topic.setProperty("title", String.format("<h2>%s</h2>", manualCard.getTopic()));
                     topic.setProperty("text", String.format("<h2>%s</h2>", manualCard.getTopic()));
                     topic.setProperty("textIsRich", "true");
+                    description.setProperty("article", manualCard.getArticle());
                     description.setProperty("text", manualCard.getArticle());
                     button.setProperty("link",link);
                     cont.setProperty("Name", page.getName());

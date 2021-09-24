@@ -8,6 +8,7 @@ function loadNews(){
     var xmlhttp = new XMLHttpRequest();
     let param = new URLSearchParams(window.location.search);
     let searchText = param.get("searchText");
+    let sortBy = param.get("sortBy")
     xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == XMLHttpRequest.DONE) {   // XMLHttpRequest.DONE == 4
            if (xmlhttp.status == 200) {
@@ -24,7 +25,7 @@ function loadNews(){
         }
     };
     xmlhttp.open("GET", "/content/dashboard/us/en/landing/jcr:content/root/container/gridcomponent.html?wcmmode=disabled&pageNum="+pageNum+
-                 "&itemsPerPage="+itemsPerPage+"&searchText="+searchText, true);
+                 "&itemsPerPage="+itemsPerPage+"&searchText="+searchText+"&sortBy="+sortBy, true);
     xmlhttp.send();
     pageNum += 6;
 }
@@ -36,3 +37,4 @@ window.addEventListener('scroll',()=>{
         loadNews();
     }
 })
+

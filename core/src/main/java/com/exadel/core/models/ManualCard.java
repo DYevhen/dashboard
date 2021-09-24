@@ -18,10 +18,10 @@ public class ManualCard {
 
     final protected static String RESOURCE_TYPE = "dashboard/components/content/manualcard";
 
-    @ValueMapValue(name = "text_1716190574/text")
+    @ValueMapValue(name = "text_1716190574/title")
     private String topic;
 
-    @ValueMapValue(name = "text/text")
+    @ValueMapValue(name = "text/article")
     private String article;
 
     @ValueMapValue(name = "myimage/link")

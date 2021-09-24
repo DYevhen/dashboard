@@ -50,6 +50,7 @@
                     <properties>
                         <cloudManagerTarget>none</cloudManagerTarget>
                     </properties>
+                    <allowIndexDefinitions>true</allowIndexDefinitions>
                     <group>com.exadel</group>
                     <name>dashboard.ui.content</name>
                     <packageType>content</packageType>

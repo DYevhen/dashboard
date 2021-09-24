@@ -31,20 +31,28 @@ public class LandingServiceImpl implements LandingService {
     private Session session;
 
     @Override
-    public Set<ManualCard> getNews(String searchText, int pageNum, int itemsPerPage) {
-        Set<ManualCard> news = new HashSet<>();
+    public List<ManualCard> getNews(String searchText, String sortBy, int pageNum, int itemsPerPage) {
+        List<ManualCard> news = new ArrayList<>();
         String query;
+        if (sortBy.equals("")||sortBy.equals("null")||sortBy.equals("byDate")) {
+            sortBy = "node.[pubDate]";
+        } else if (sortBy.equals("byTitle")) {
+            sortBy = "child2.[title]";
+        }
         final String defaultQuery = "SELECT * FROM [nt:unstructured] AS node WHERE ISDESCENDANTNODE ([/content/dashboard/news])" +
                     "AND node.[sling:resourceType]='dashboard/components/container' AND [jcr:path] LIKE '%root/%' ORDER BY node.[pubDate]";
         String withKeyWord =
                 "SELECT node.* FROM [nt:unstructured] AS node " +
-                "INNER JOIN [nt:unstructured] AS child ON ISDESCENDANTNODE (child, node) " +
-                "WHERE ISDESCENDANTNODE (node, '/content/dashboard/news') " +
-                "AND node.[sling:resourceType]='dashboard/components/container' " +
-                "AND node.[jcr:path] LIKE '%root/%' " +
-                "AND LOWER(child.[text]) LIKE '%"+searchText+"%' " +
-                "ORDER BY node.[pubDate]";
-        if (searchText.equals("") || searchText.equals("null")) {
+                        "INNER JOIN [nt:unstructured] AS child ON ISDESCENDANTNODE (child, node) " +
+                        "INNER JOIN [nt:unstructured] AS child2 ON ISDESCENDANTNODE (child2, node) " +
+                        "WHERE ISDESCENDANTNODE (node, '/content/dashboard/news') " +
+                        "AND node.[sling:resourceType]='dashboard/components/container' " +
+                        "AND node.[jcr:path] LIKE '%root/%' " +
+                        "AND child.[article] IS NOT NULL " +
+                        "AND child2.[title] IS NOT NULL " +
+                        "AND (LOWER(child.[article]) LIKE '%"+searchText+"%' OR LOWER(child2.[title]) LIKE '%"+searchText+"%') " +
+                        "ORDER BY "+sortBy;
+        if ((searchText.equals("") || searchText.equals("null")) && sortBy.equals("node.[pubDate]")) {
             query = defaultQuery;
         } else {
             query = withKeyWord;

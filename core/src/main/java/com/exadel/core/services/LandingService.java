@@ -1,9 +1,9 @@
 package com.exadel.core.services;
 import com.exadel.core.models.ManualCard;
 
-import java.util.Set;
+import java.util.List;
 
 public interface LandingService {
 
-    Set<ManualCard> getNews(String searchText, int pageNum, int itemsPerPage);
+    List<ManualCard> getNews(String searchText, String sortBy, int pageNum, int itemsPerPage);
 }

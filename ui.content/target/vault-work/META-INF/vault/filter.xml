@@ -4,4 +4,5 @@
     <filter root="/content/dashboard" mode="merge"/>
     <filter root="/content/dam/dashboard/asset.jpg" mode="merge"/>
     <filter root="/content/experience-fragments/dashboard" mode="merge"/>
+    <filter root="/oak:index/myIndex"/>
 </workspaceFilter>
