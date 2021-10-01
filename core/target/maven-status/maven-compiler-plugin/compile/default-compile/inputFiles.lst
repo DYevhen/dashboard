@@ -3,6 +3,7 @@
 /home/ydobrenchuk/IdeaProjects/dashboard/core/src/main/java/com/exadel/core/models/Landing.java
 /home/ydobrenchuk/IdeaProjects/dashboard/core/src/main/java/com/exadel/core/models/HelloWorldModel.java
 /home/ydobrenchuk/IdeaProjects/dashboard/core/src/main/java/com/exadel/core/utility/ManualCard.java
+/home/ydobrenchuk/IdeaProjects/dashboard/core/src/main/java/com/exadel/core/servlets/ImportNewsServlet.java
 /home/ydobrenchuk/IdeaProjects/dashboard/core/src/main/java/com/exadel/core/services/impl/RssImporterImpl.java
 /home/ydobrenchuk/IdeaProjects/dashboard/core/src/main/java/com/exadel/core/annotation/QueryParameter.java
 /home/ydobrenchuk/IdeaProjects/dashboard/core/src/main/java/com/exadel/core/models/ManualCard.java

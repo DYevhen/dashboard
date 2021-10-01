@@ -5,6 +5,8 @@ let isSend = false;
 function loadNews(){
     isSend = true;
     console.log("we are in load news");
+
+
     var xmlhttp = new XMLHttpRequest();
     let param = new URLSearchParams(window.location.search);
     let searchText = param.get("searchText");
@@ -24,7 +26,8 @@ function loadNews(){
            }
         }
     };
-    xmlhttp.open("GET", "/content/dashboard/us/en/landing/jcr:content/root/container/gridcomponent.html?wcmmode=disabled&pageNum="+pageNum+
+    let URL = window.location.href.substring(0, 53);
+    xmlhttp.open("GET", URL+"/jcr:content/root/container/gridcomponent.html?wcmmode=disabled&pageNum="+pageNum+
                  "&itemsPerPage="+itemsPerPage+"&searchText="+searchText+"&sortBy="+sortBy, true);
     xmlhttp.send();
     pageNum += 6;

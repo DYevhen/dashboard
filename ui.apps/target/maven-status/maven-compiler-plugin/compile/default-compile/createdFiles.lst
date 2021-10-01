@@ -7,6 +7,8 @@ org/apache/sling/scripting/sightly/apps/dashboard/components/helloworld/hellowor
 org/apache/sling/scripting/sightly/apps/dashboard/components/content/button/button__002e__html.class
 org/apache/sling/scripting/sightly/apps/dashboard/components/content/dynamiccard/dinamiccard__002e__html.class
 org/apache/sling/scripting/sightly/apps/dashboard/components/page/page__002e__html.class
+org/apache/sling/scripting/sightly/apps/dashboard/components/granite__002d__page/body__002e__html.class
+org/apache/sling/scripting/sightly/apps/dashboard/components/granite__002d__page/granite__002d__page__002e__html.class
 org/apache/sling/scripting/sightly/apps/dashboard/components/content/article/body__002e__html.class
 org/apache/sling/scripting/sightly/apps/dashboard/components/page/body__002e__html.class
 org/apache/sling/scripting/sightly/apps/dashboard/components/xfpage/content__002e__html.class

@@ -31,7 +31,7 @@ public class LandingServiceImpl implements LandingService {
     private Session session;
 
     @Override
-    public List<ManualCard> getNews(String searchText, String sortBy, int pageNum, int itemsPerPage) {
+    public List<ManualCard> getNews(String searchText, String sortBy, int pageNum, int itemsPerPage, String language) {
         List<ManualCard> news = new ArrayList<>();
         String query;
         if (sortBy.equals("")||sortBy.equals("null")||sortBy.equals("byDate")) {
@@ -39,18 +39,18 @@ public class LandingServiceImpl implements LandingService {
         } else if (sortBy.equals("byTitle")) {
             sortBy = "child2.[title]";
         }
-        final String defaultQuery = "SELECT * FROM [nt:unstructured] AS node WHERE ISDESCENDANTNODE ([/content/dashboard/news])" +
+        String defaultQuery = "SELECT * FROM [nt:unstructured] AS node WHERE ISDESCENDANTNODE ([/content/dashboard/us/"+language+"/news])" +
                     "AND node.[sling:resourceType]='dashboard/components/container' AND [jcr:path] LIKE '%root/%' ORDER BY node.[pubDate]";
         String withKeyWord =
                 "SELECT node.* FROM [nt:unstructured] AS node " +
                         "INNER JOIN [nt:unstructured] AS child ON ISDESCENDANTNODE (child, node) " +
                         "INNER JOIN [nt:unstructured] AS child2 ON ISDESCENDANTNODE (child2, node) " +
-                        "WHERE ISDESCENDANTNODE (node, '/content/dashboard/news') " +
+                        "WHERE ISDESCENDANTNODE (node, '/content/dashboard/us/"+language+"/news') " +
                         "AND node.[sling:resourceType]='dashboard/components/container' " +
                         "AND node.[jcr:path] LIKE '%root/%' " +
-                        "AND child.[article] IS NOT NULL " +
-                        "AND child2.[title] IS NOT NULL " +
-                        "AND (LOWER(child.[article]) LIKE '%"+searchText+"%' OR LOWER(child2.[title]) LIKE '%"+searchText+"%') " +
+                        "AND NAME(child)='text_1716190574' " +
+                        "AND NAME(child2) ='text'" +
+                        "AND (LOWER(child.[text]) LIKE '%"+searchText+"%' OR LOWER(child2.[text]) LIKE '%"+searchText+"%') " +
                         "ORDER BY "+sortBy;
         if ((searchText.equals("") || searchText.equals("null")) && sortBy.equals("node.[pubDate]")) {
             query = defaultQuery;

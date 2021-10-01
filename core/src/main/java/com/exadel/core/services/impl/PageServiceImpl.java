@@ -27,7 +27,7 @@ public class PageServiceImpl implements PageService {
     private PageManager pageManager;
     private Session session;
     private final String PAGE_TAMPLATE = "/conf/dashboard/settings/wcm/templates/article_2";
-    private final String PAGE_PATH = "/content/dashboard/news";
+    private final String PAGE_PATH = "/content/dashboard/us/en/news";
 
     @Override
     public Page createCard(ManualCard manualCard) {
@@ -45,7 +45,7 @@ public class PageServiceImpl implements PageService {
                 Node newNode = page.adaptTo(Node.class);
                 Node cont = newNode.getNode("jcr:content");
                 if (cont != null) {
-                    String link = String.format("http://localhost:4502%s.html", cont.getParent().getPath());
+                    String link = String.format("news/%s.html", page.getName());
                     Node description = cont.getNode("root/container/text");
                     Node image = cont.getNode("root/container/myimage");
                     Node button = cont.getNode("root/container/button");
@@ -54,10 +54,8 @@ public class PageServiceImpl implements PageService {
                     container.setProperty("pubDate", newNode.getProperty("jcr:created").getValue());
                     image.setProperty("link", manualCard.getImage());
                     image.setProperty("sling:resourceType", "dashboard/components/content/myImage");
-                    topic.setProperty("title", String.format("<h2>%s</h2>", manualCard.getTopic()));
                     topic.setProperty("text", String.format("<h2>%s</h2>", manualCard.getTopic()));
                     topic.setProperty("textIsRich", "true");
-                    description.setProperty("article", manualCard.getArticle());
                     description.setProperty("text", manualCard.getArticle());
                     button.setProperty("link",link);
                     cont.setProperty("Name", page.getName());

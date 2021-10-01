@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style type="text/css">
+  .button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 46px;
+  margin: 400px 500px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  width: 40%;
+}
+.button2 {
+  background-color: white;
+  color: black;
+  border: 2px solid #008CBA;
+}
+
+.button2:hover {
+  background-color: #008CBA;
+  color: white;
+}
+  </style>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+<body>
+<form method="get" action="/content/dashboard/granite-page/start.html">
+  <input onclick="showAlert()" type="submit" class="button button2" value="IMPORT NEWS"/>
+</form>
+</body>
+<script>
+   async function showAlert() {
+    var response = await fetch("/content/dashboard/granite-page.html");
+    console.log(response);
+    if (response.ok) {
+    let div = document.createElement('div');
+    div.className = "alert";
+    div.innerHTML = "<strong>Success</strong>";
+    document.body.append(div);
+    setTimeout(() => div.remove(), 1000);
+    } else {
+    alert("Error HTTP: " + response.status);
+    }
+   }
+</script>
+</html>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.3.0" name="com.exadel.core.servlets.ImportNewsServlet">
+  <property name="sling.servlet.paths" type="String">/content/dashboard/import-news/start</property>
+  <property name="sling.servlet.methods" type="String" value="POST"/>
+  <service>
+    <provide interface="javax.servlet.Servlet"/>
+  </service>
+  <reference name="pageService" interface="com.exadel.core.services.PageService" field="pageService"/>
+  <reference name="rssImporter" interface="com.exadel.core.services.RssImporter" field="rssImporter"/>
+  <implementation class="com.exadel.core.servlets.ImportNewsServlet"/>
+</scr:component>

@@ -2,10 +2,11 @@
 <jcr:root xmlns:oak="http://jackrabbit.apache.org/oak/ns/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:rep="internal"
           jcr:mixinTypes="[rep:AccessControllable]"
           jcr:primaryType="oak:QueryIndexDefinition"
-          async="[async,nrt]"
+          async="[fulltext-async]"
           compatVersion="{Long}2"
+          codec="Lucene46"
           evaluatePathRestrictions="{Boolean}true"
-          reindex="{Boolean}false"
+          reindex="{Boolean}true"
           reindexCount="{Long}1"
           seed="{Long}1123727366897157782"
           type="lucene">
@@ -20,8 +21,33 @@
                     <keywords
                             jcr:primaryType="nt:unstructured"
                             name="cq:keyword"
-                            sync="true"
-                    />
+                            sync="true" />
+                    <searchKeywords
+                            jcr:primaryType="nt:unstructured"
+                            name="search_keywords"
+                            analyzed="{Boolean}true"
+                            nodeScopeIndex="{Boolean}true"
+                            type="String"/>
+                    <englishSearchKeywords
+                            jcr:primaryType="nt:unstructured"
+                            name="english_search_keywords"
+                            analyzed="{Boolean}true"
+                            nodeScopeIndex="{Boolean}true"
+                            type="String"/>
+                    <coalesce_searchKeywords
+                            jcr:primaryType="nt:unstructured"
+                            function="coalesce(@english_search_keywords, @search_keywords)"
+                            propertyIndex="{Boolean}true" />
+                    <article
+                            jcr:primaryType="nt:unstructured"
+                            analyzed="{Boolean}true"
+                            name="article"
+                            nodeScopeIndex="{Boolean}true"/>
+                    <title
+                            jcr:primaryType="nt:unstructured"
+                            analyzed="{Boolean}true"
+                            name="title"
+                            nodeScopeIndex="{Boolean}true"/>
                 </properties>
             </nt:unstructured>
         </indexRules>

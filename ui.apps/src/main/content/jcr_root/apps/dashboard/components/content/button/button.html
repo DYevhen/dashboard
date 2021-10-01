@@ -12,6 +12,10 @@
   font-size: 16px;
 }
 </style>
-<a href="http://localhost:4502/content/dashboard/us/en/landing.html"
-   class="button">Show more articles</a>
+<a href=""
+   class="button" id="link">Show more articles</a>
 </html>
+<script>
+    let URL = window.location.href.substring(0, 46)+"landing.html";
+    document.getElementById("link").setAttribute("href", URL);
+</script>

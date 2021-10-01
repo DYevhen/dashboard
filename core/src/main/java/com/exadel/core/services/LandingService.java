@@ -5,5 +5,5 @@ import java.util.List;
 
 public interface LandingService {
 
-    List<ManualCard> getNews(String searchText, String sortBy, int pageNum, int itemsPerPage);
+    List<ManualCard> getNews(String searchText, String sortBy, int pageNum, int itemsPerPage, String language);
 }

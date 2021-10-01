@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Bnd-LastModified: 1632492227212
+Bnd-LastModified: 1633094458369
 Build-Jdk: 11.0.12
 Built-By: ydobrenchuk
 Bundle-ClassPath: .,rome-1.16.0.jar,rome-utils-1.16.0.jar,jdom2-2.0.6.ja
@@ -88,6 +88,7 @@ Service-Component: OSGI-INF/com.exadel.core.filters.LoggingFilter.xml,OS
  leScheduledTask.xml,OSGI-INF/com.exadel.core.services.impl.LandingServi
  ceImpl.xml,OSGI-INF/com.exadel.core.services.impl.PageServiceImpl.xml,O
  SGI-INF/com.exadel.core.services.impl.RssImporterImpl.xml,OSGI-INF/com.
- exadel.core.servlets.SimpleServlet.xml
+ exadel.core.servlets.ImportNewsServlet.xml,OSGI-INF/com.exadel.core.ser
+ vlets.SimpleServlet.xml
 Sling-Model-Packages: com.exadel.core.models
 Tool: Bnd-5.1.1.202006162103
