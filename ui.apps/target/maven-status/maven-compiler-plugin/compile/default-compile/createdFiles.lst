@@ -17,4 +17,3 @@ org/apache/sling/scripting/sightly/apps/dashboard/components/card/card__002e__ht
 org/apache/sling/scripting/sightly/apps/dashboard/components/content/manualcard/manualcard__002e__html.class
 org/apache/sling/scripting/sightly/apps/dashboard/components/content/myImage/myImage__002e__html.class
 org/apache/sling/scripting/sightly/apps/dashboard/components/content/gridcomponent/gridcomponent__002e__html.class
-org/apache/sling/scripting/sightly/apps/dashboard/components/page/customfooterlibs__002e__html.class

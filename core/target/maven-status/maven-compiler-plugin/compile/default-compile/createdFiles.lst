@@ -1,6 +1,7 @@
 com/exadel/core/services/RssImporter.class
 com/exadel/core/utility/ManualCard.class
 com/exadel/core/exceptions/DuplicateNewsException.class
+com/exadel/core/services/PageService.class
 com/exadel/core/services/LandingService.class
 com/exadel/core/models/HelloWorldModel.class
 com/exadel/core/servlets/package-info.class
@@ -11,6 +12,7 @@ com/exadel/core/injectors/QueryInjector.class
 com/exadel/core/models/ColumnControl.class
 com/exadel/core/annotation/QueryParameter.class
 com/exadel/core/models/Landing.class
+com/exadel/core/services/impl/PageServiceImpl.class
 com/exadel/core/servlets/SimpleServlet.class
 com/exadel/core/utility/Columns.class
 com/exadel/core/models/Grid.class

@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Bnd-LastModified: 1633094458369
+Bnd-LastModified: 1633343795356
 Build-Jdk: 11.0.12
 Built-By: ydobrenchuk
 Bundle-ClassPath: .,rome-1.16.0.jar,rome-utils-1.16.0.jar,jdom2-2.0.6.ja
@@ -22,12 +22,13 @@ Export-Package: com.exadel.core.annotation;version="1.0.0";uses:="org.ap
  .filters;version="1.0";uses:="javax.servlet",com.exadel.core.listeners;
  version="1.0";uses:="org.osgi.service.event",com.exadel.core.services;v
  ersion="1.0.0";uses:="com.day.cq.wcm.api,com.exadel.core.models,com.exa
- del.core.utility",com.exadel.core.exceptions;version="1.0.0",com.exadel
- .core.injectors;version="1.0.0";uses:="org.apache.sling.api,org.apache.
- sling.models.spi",com.exadel.core.models;version="1.0";uses:="com.exade
- l.core.services,com.exadel.core.utility,javax.annotation,javax.inject,o
- rg.apache.sling.api,org.apache.sling.api.resource,org.apache.sling.mode
- ls.annotations,org.apache.sling.models.annotations.injectorspecific"
+ del.core.utility,org.apache.sling.api.resource",com.exadel.core.excepti
+ ons;version="1.0.0",com.exadel.core.injectors;version="1.0.0";uses:="or
+ g.apache.sling.api,org.apache.sling.models.spi",com.exadel.core.models;
+ version="1.0";uses:="com.exadel.core.services,com.exadel.core.utility,j
+ avax.annotation,javax.inject,org.apache.sling.api,org.apache.sling.api.
+ resource,org.apache.sling.models.annotations,org.apache.sling.models.an
+ notations.injectorspecific"
 Import-Package: javax.inject;version="0.0.0",javax.annotation;version="0
  .0.0",com.day.cq.wcm.api;resolution:=optional;version="[1.28,2)",com.ex
  adel.core.annotation;resolution:=optional;version="[1.0,2)",com.exadel.

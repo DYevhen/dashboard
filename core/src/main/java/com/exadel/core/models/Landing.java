@@ -47,6 +47,7 @@ public class Landing {
     @PostConstruct
     public void init() {
         String language = request.getRequestPathInfo().getResourcePath().substring(22,24);
-        cards = landingService.getNews(searchText.toLowerCase(), sortBy, Integer.parseInt(pageNum), Integer.parseInt(itemsPerPage), language);//ru
+        cards = landingService.getNews(request.getResourceResolver(), searchText.toLowerCase(), sortBy,
+                Integer.parseInt(pageNum), Integer.parseInt(itemsPerPage), language);
     }
 }

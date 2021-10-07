@@ -26,12 +26,12 @@ public class LandingServiceImpl implements LandingService {
     private ResourceResolverFactory resolverFactory;
 
     private final String LANDING_PATH = "/content/dashboard/us/en/landing";
-    private final String USER = "dashboardserviceuser";
+//    private final String USER = "dashboardserviceuser";
     private PageManager pageManager;
     private Session session;
 
     @Override
-    public List<ManualCard> getNews(String searchText, String sortBy, int pageNum, int itemsPerPage, String language) {
+    public List<ManualCard> getNews(ResourceResolver resolver, String searchText, String sortBy, int pageNum, int itemsPerPage, String language) {
         List<ManualCard> news = new ArrayList<>();
         String query;
         if (sortBy.equals("")||sortBy.equals("null")||sortBy.equals("byDate")) {
@@ -58,9 +58,9 @@ public class LandingServiceImpl implements LandingService {
             query = withKeyWord;
         }
         QueryResult queryResult;
-        Map<String, Object> paramMap = new HashMap<>();
-        paramMap.put(ResourceResolverFactory.SUBSERVICE, USER);
-        try (ResourceResolver resolver = resolverFactory.getServiceResourceResolver(paramMap)) {
+//        Map<String, Object> paramMap = new HashMap<>();
+//        paramMap.put(ResourceResolverFactory.SUBSERVICE, USER);
+        try {
             session = resolver.adaptTo(Session.class);
             pageManager = resolver.adaptTo(PageManager.class);
             Query q = session.getWorkspace().getQueryManager().createQuery(query,"JCR-SQL2");
@@ -73,7 +73,7 @@ public class LandingServiceImpl implements LandingService {
                 ManualCard card = resolver.getResource(content.getPath()).adaptTo(ManualCard.class);
                 news.add(card);
             }
-        }catch (LoginException | RepositoryException e){
+        }catch (RepositoryException e){
             log.error("Cannot get news", e);
         }
         return news;
