@@ -13,6 +13,7 @@ import org.osgi.service.metatype.annotations.Designate;
 import org.osgi.service.metatype.annotations.ObjectClassDefinition;
 
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 @Slf4j
@@ -39,7 +40,6 @@ public class NewsImportScheduler implements Runnable {
     private RssImporter rssImporter;
 
     List<ManualCard> cards;
-    private Date lastExecution = new Date(1212121212121L);;
 
     @Reference
     private Scheduler scheduler;
@@ -52,9 +52,8 @@ public class NewsImportScheduler implements Runnable {
     public void run() {
         log.info("\n===========================NEWS IMPORT SCHEDULER=================================");
         cards = rssImporter.getData();
-        pageService.createCards(cards, lastExecution);
-        lastExecution = new Date();
-        log.info(String.format("\n=============================%d====================================================",
-                lastExecution.getTime()));
+        pageService.createCards(cards);
+        pageService.setLastExecution(new GregorianCalendar());
+        log.info("\n===========================NEWS IMPORTER END=====================================");
     }
 }

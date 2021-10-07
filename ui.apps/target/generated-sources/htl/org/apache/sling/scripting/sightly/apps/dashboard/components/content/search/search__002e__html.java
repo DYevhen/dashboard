@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  ******************************************************************************/
-package org.apache.sling.scripting.sightly.apps.dashboard.components.page;
+package org.apache.sling.scripting.sightly.apps.dashboard.components.content.search;
 
 import java.io.PrintWriter;
 import java.util.Collection;
@@ -25,7 +25,7 @@ import javax.script.Bindings;
 import org.apache.sling.scripting.sightly.render.RenderUnit;
 import org.apache.sling.scripting.sightly.render.RenderContext;
 
-public final class customfooterlibs__002e__html extends RenderUnit {
+public final class search__002e__html extends RenderUnit {
 
     @Override
     protected final void render(PrintWriter out,
@@ -34,21 +34,7 @@ public final class customfooterlibs__002e__html extends RenderUnit {
                                 RenderContext renderContext) {
 // Main Template Body -----------------------------------------------------------------------------
 
-Object _global_clientlib = null;
-out.write("\n");
-_global_clientlib = renderContext.call("use", "/libs/granite/sightly/templates/clientlib.html", obj());
-out.write("\n    ");
-{
-    Object var_templatevar0 = renderContext.getObjectModel().resolveProperty(_global_clientlib, "js");
-    {
-        String var_templateoptions1_field$_categories = "dashboard.base";
-        {
-            java.util.Map var_templateoptions1 = obj().with("categories", var_templateoptions1_field$_categories);
-            callUnit(out, renderContext, var_templatevar0, var_templateoptions1);
-        }
-    }
-}
-out.write("\n\n\n");
+out.write("<div class=\"search\">\n    <input id=\"search\" type=\"text\" placeholder=\"Search..\"/>\n</div>");
 
 
 // End Of Main Template Body ----------------------------------------------------------------------

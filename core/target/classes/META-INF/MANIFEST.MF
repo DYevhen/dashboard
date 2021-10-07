@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Bnd-LastModified: 1632139259356
+Bnd-LastModified: 1633343795356
 Build-Jdk: 11.0.12
 Built-By: ydobrenchuk
 Bundle-ClassPath: .,rome-1.16.0.jar,rome-utils-1.16.0.jar,jdom2-2.0.6.ja
@@ -22,12 +22,13 @@ Export-Package: com.exadel.core.annotation;version="1.0.0";uses:="org.ap
  .filters;version="1.0";uses:="javax.servlet",com.exadel.core.listeners;
  version="1.0";uses:="org.osgi.service.event",com.exadel.core.services;v
  ersion="1.0.0";uses:="com.day.cq.wcm.api,com.exadel.core.models,com.exa
- del.core.utility",com.exadel.core.exceptions;version="1.0.0",com.exadel
- .core.injectors;version="1.0.0";uses:="org.apache.sling.api,org.apache.
- sling.models.spi",com.exadel.core.models;version="1.0";uses:="com.exade
- l.core.services,com.exadel.core.utility,javax.annotation,javax.inject,o
- rg.apache.sling.api,org.apache.sling.api.resource,org.apache.sling.mode
- ls.annotations,org.apache.sling.models.annotations.injectorspecific"
+ del.core.utility,org.apache.sling.api.resource",com.exadel.core.excepti
+ ons;version="1.0.0",com.exadel.core.injectors;version="1.0.0";uses:="or
+ g.apache.sling.api,org.apache.sling.models.spi",com.exadel.core.models;
+ version="1.0";uses:="com.exadel.core.services,com.exadel.core.utility,j
+ avax.annotation,javax.inject,org.apache.sling.api,org.apache.sling.api.
+ resource,org.apache.sling.models.annotations,org.apache.sling.models.an
+ notations.injectorspecific"
 Import-Package: javax.inject;version="0.0.0",javax.annotation;version="0
  .0.0",com.day.cq.wcm.api;resolution:=optional;version="[1.28,2)",com.ex
  adel.core.annotation;resolution:=optional;version="[1.0,2)",com.exadel.
@@ -74,23 +75,21 @@ Provide-Capability: osgi.service;objectClass:List<String>="com.exadel.co
  Class:List<String>="org.osgi.service.event.EventHandler";uses:="org.osg
  i.service.event"
 Require-Capability: osgi.service;filter:="(objectClass=com.exadel.core.s
- ervices.LandingService)";effective:=active,osgi.service;filter:="(objec
- tClass=com.exadel.core.services.PageService)";effective:=active,osgi.se
- rvice;filter:="(objectClass=com.exadel.core.services.RssImporter)";effe
- ctive:=active,osgi.service;filter:="(objectClass=org.apache.sling.api.r
- esource.ResourceResolverFactory)";effective:=active,osgi.service;filter
- :="(objectClass=org.apache.sling.commons.scheduler.Scheduler)";effectiv
- e:=active,osgi.extender;filter:="(&(osgi.extender=osgi.component)(versi
- on>=1.4.0)(!(version>=2.0.0)))",osgi.ee;filter:="(&(osgi.ee=JavaSE)(ver
- sion=1.8))"
+ ervices.PageService)";effective:=active,osgi.service;filter:="(objectCl
+ ass=com.exadel.core.services.RssImporter)";effective:=active,osgi.servi
+ ce;filter:="(objectClass=org.apache.sling.api.resource.ResourceResolver
+ Factory)";effective:=active,osgi.service;filter:="(objectClass=org.apac
+ he.sling.commons.scheduler.Scheduler)";effective:=active,osgi.extender;
+ filter:="(&(osgi.extender=osgi.component)(version>=1.4.0)(!(version>=2.
+ 0.0)))",osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.8))"
 Service-Component: OSGI-INF/com.exadel.core.filters.LoggingFilter.xml,OS
  GI-INF/com.exadel.core.injectors.QueryInjector.xml,OSGI-INF/com.exadel.
  core.listeners.SimpleResourceListener.xml,OSGI-INF/com.exadel.core.sche
- dulers.LandingScheduler.xml,OSGI-INF/com.exadel.core.schedulers.NewsImp
- ortScheduler.xml,OSGI-INF/com.exadel.core.schedulers.SimpleScheduledTas
- k.xml,OSGI-INF/com.exadel.core.services.impl.LandingServiceImpl.xml,OSG
- I-INF/com.exadel.core.services.impl.PageServiceImpl.xml,OSGI-INF/com.ex
- adel.core.services.impl.RssImporterImpl.xml,OSGI-INF/com.exadel.core.se
- rvlets.SimpleServlet.xml
+ dulers.NewsImportScheduler.xml,OSGI-INF/com.exadel.core.schedulers.Simp
+ leScheduledTask.xml,OSGI-INF/com.exadel.core.services.impl.LandingServi
+ ceImpl.xml,OSGI-INF/com.exadel.core.services.impl.PageServiceImpl.xml,O
+ SGI-INF/com.exadel.core.services.impl.RssImporterImpl.xml,OSGI-INF/com.
+ exadel.core.servlets.ImportNewsServlet.xml,OSGI-INF/com.exadel.core.ser
+ vlets.SimpleServlet.xml
 Sling-Model-Packages: com.exadel.core.models
 Tool: Bnd-5.1.1.202006162103

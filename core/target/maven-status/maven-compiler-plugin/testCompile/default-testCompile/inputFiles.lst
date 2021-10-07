@@ -5,3 +5,4 @@
 /home/ydobrenchuk/IdeaProjects/dashboard/core/src/test/java/com/exadel/core/services/PageServiceTest.java
 /home/ydobrenchuk/IdeaProjects/dashboard/core/src/test/java/com/exadel/core/servlets/SimpleServletTest.java
 /home/ydobrenchuk/IdeaProjects/dashboard/core/src/test/java/com/exadel/core/models/HelloWorldModelTest.java
+/home/ydobrenchuk/IdeaProjects/dashboard/core/src/test/java/com/exadel/core/services/LandingServiceTest.java

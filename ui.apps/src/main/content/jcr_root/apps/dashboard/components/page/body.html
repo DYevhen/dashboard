@@ -1,5 +1,16 @@
 <div class="topnav">
   <a class="active">NEWS</a>
+  <a> </a>
+  <form method="get">
+    <div class="search">
+      <input name="searchText" id="searchText" type="text" placeholder="text...">
+      <label for="sortBy">sort by:</label>
+      <select name="sortBy" id="sortBy" class="custom-select">
+        <option value="byDate">date</option>
+        <option value="byTitle">title</option>
+      </select>
+    </div>
+  </form>
 </div>
   <sly data-sly-use.templatedContainer="com.day.cq.wcm.foundation.TemplatedContainer"
        data-sly-repeat.child="${templatedContainer.structureResources}"

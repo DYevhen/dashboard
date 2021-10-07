@@ -1,18 +1,13 @@
 package com.exadel.core.models;
 
-import com.adobe.cq.social.commons.annotation.Parameter;
-import com.adobe.xfa.Int;
 import com.exadel.core.annotation.QueryParameter;
 import com.exadel.core.services.LandingService;
 import lombok.Getter;
-import lombok.Value;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.sling.api.SlingHttpServletRequest;
-import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.OSGiService;
-import org.apache.sling.models.annotations.injectorspecific.RequestAttribute;
 import org.apache.sling.models.annotations.injectorspecific.Self;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 
@@ -43,8 +38,16 @@ public class Landing {
     @QueryParameter(name = "itemsPerPage", defaultValue = "9")
     private String itemsPerPage;
 
+    @QueryParameter(name = "searchText", defaultValue = "")
+    private String searchText;
+
+    @QueryParameter(name = "sortBy", defaultValue = "")
+    private String sortBy;
+
     @PostConstruct
     public void init() {
-        cards = landingService.getNews(Integer.parseInt(pageNum), Integer.parseInt(itemsPerPage));
+        String language = request.getRequestPathInfo().getResourcePath().substring(22,24);
+        cards = landingService.getNews(request.getResourceResolver(), searchText.toLowerCase(), sortBy,
+                Integer.parseInt(pageNum), Integer.parseInt(itemsPerPage), language);
     }
 }

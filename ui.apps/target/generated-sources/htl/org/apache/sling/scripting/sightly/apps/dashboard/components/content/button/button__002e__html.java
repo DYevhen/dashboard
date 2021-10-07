@@ -34,7 +34,7 @@ public final class button__002e__html extends RenderUnit {
                                 RenderContext renderContext) {
 // Main Template Body -----------------------------------------------------------------------------
 
-out.write("<html>\n<style>\n    a.button {\n  background-color: #04AA6D;\n  border: none;\n  color: black;\n  font-weight: 600;\n  padding: 15px 32px;\n  text-align: center;\n  text-decoration: none;\n  display: inline-block;\n  font-size: 16px;\n}\n</style>\n<a href=\"http://localhost:4502/content/dashboard/us/en/landing.html\" class=\"button\">Show more articles</a>\n</html>");
+out.write("<html>\n<style>\n    a.button {\n  background-color: #04AA6D;\n  border: none;\n  color: black;\n  font-weight: 600;\n  padding: 15px 32px;\n  text-align: center;\n  text-decoration: none;\n  display: inline-block;\n  font-size: 16px;\n}\n</style>\n<a href=\"\" class=\"button\" id=\"link\">Show more articles</a>\n</html>\n<script>\n    let URL = window.location.href.substring(0, 46)+\"landing.html\";\n    document.getElementById(\"link\").setAttribute(\"href\", URL);\n</script>");
 
 
 // End Of Main Template Body ----------------------------------------------------------------------

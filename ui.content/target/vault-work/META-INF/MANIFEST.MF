@@ -11,5 +11,6 @@ Content-Package-Dependencies: com.exadel:dashboard.ui.apps:1.0.0-SNAPSHO
 Content-Package-Dependencies-Locations: com.exadel:dashboard.ui.apps:1.0
  .0-SNAPSHOT=maven:com.exadel:dashboard.ui.apps:1.0.0-SNAPSHOT:zip
 Content-Package-Roots: /conf/dashboard,/content/dam/dashboard/asset.jpg,
- /content/dashboard,/content/experience-fragments/dashboard
+ /content/dashboard,/content/experience-fragments/dashboard,/oak:index/m
+ yIndex
 
